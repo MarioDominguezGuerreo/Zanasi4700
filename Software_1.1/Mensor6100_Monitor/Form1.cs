@@ -37,7 +37,7 @@ namespace Zanasi4700
         public const Byte LineIndex1    = 0x01; //Line Index    = 1
         public const Byte LineIndex2    = 0x02; //Line Index    = 2
         public const Byte MsgIndex      = 0x00; //Message Index = 0
-        public const Byte MsgSize       = 0x12; //12 characters
+        public const Byte MsgSize       = 0x0C; //12 characters
 
         public const Byte Space         = 0x20; //Empty 
         enum ZanasiCMD
@@ -110,6 +110,8 @@ namespace Zanasi4700
 
         //FESTO Controller CMMO ST -LKP
         CMMO_ST_LKP OCMMO = new CMMO_ST_LKP();
+        //ADAM-6250 Remote IO
+        ADAM6250 _ADAM6250 = new ADAM6250();
         #endregion
 
         public Form1()
@@ -124,6 +126,9 @@ namespace Zanasi4700
             Limits();
             //Build Zanasi Command
             mZanasiCommand();
+            //ADAM-6250 IP
+            _ADAM6250.IP = "192.168.1.21";
+            _ADAM6250.Port = 502;
         }
 
         private void LocalClock_Tick(object sender, EventArgs e)
@@ -349,16 +354,61 @@ namespace Zanasi4700
             #endregion
 
             #endregion
+
+            #region ADAM-6250 IO scan
+            //Inputs
+            DI0.Checked = _ADAM6250.Inputs[0];
+            DI1.Checked = _ADAM6250.Inputs[1];
+            DI2.Checked = _ADAM6250.Inputs[2];
+            DI3.Checked = _ADAM6250.Inputs[3];
+            DI4.Checked = _ADAM6250.Inputs[4];
+            DI5.Checked = _ADAM6250.Inputs[5];
+            DI6.Checked = _ADAM6250.Inputs[6];
+            DI7.Checked = _ADAM6250.Inputs[7];
+            DI8.Checked = _ADAM6250.Inputs[8];
+            DI9.Checked = _ADAM6250.Inputs[9];
+            DI10.Checked = _ADAM6250.Inputs[10];
+            DI11.Checked = _ADAM6250.Inputs[11];
+
+            //Outputs: Manual mode the outputs can be forced
+
+            if (btn_ForceOutputs.Checked)
+            {
+                //Write Permission
+                pnl_Outputs.Enabled = true;
+                _ADAM6250.Parameters[1] = false;
+
+                _ADAM6250.Outputs[0] = DO0.Checked;
+                _ADAM6250.Outputs[1] = DO1.Checked;
+                _ADAM6250.Outputs[2] = DO2.Checked;
+                _ADAM6250.Outputs[3] = DO3.Checked;
+                _ADAM6250.Outputs[4] = DO4.Checked;
+                _ADAM6250.Outputs[5] = DO5.Checked;
+            }
+            else
+            {
+                //Write Permission
+                pnl_Outputs.Enabled = false;
+                _ADAM6250.Parameters[1] = false;
+
+                DO0.Checked = _ADAM6250.Outputs[0];
+                DO1.Checked = _ADAM6250.Outputs[1];
+                DO2.Checked = _ADAM6250.Outputs[2];
+                DO3.Checked = _ADAM6250.Outputs[3];
+                DO4.Checked = _ADAM6250.Outputs[4];
+                DO5.Checked = _ADAM6250.Outputs[5];
+            }
+            #endregion
         }
         //Clear Log
-        private void Btn_Clear_Click(object sender, EventArgs e)
+        private void btn_Clear_Click_1(object sender, EventArgs e)
         {
             txt_ReadData.Text = "";
             txt_ExtData_Index0.Text = "";
             txt_ExtData_Index1.Text = "";
             txt_ExtData_Index2.Text = "";
             //txt_SendData.Text = "*";
-        }  
+        }
 
         #region External Data: Control
         private void btn_ExtData_Index0_Click(object sender, EventArgs e)
@@ -397,7 +447,7 @@ namespace Zanasi4700
             char[] Line1_Command;
             string Line1_cmd = "";
             //Command position:  [0]   [1]   [2]   [3]   [4]   [5]   [6]   [7]   [8]   [9]   [10]
-            Byte[] _ZanasiCMD = { 0x23, 0xA3, 0x00, 0x00, 0x06, 0x54, 0x45, 0x53, 0x54, 0x20, 0x31 };
+            Byte[] _ZanasiCMD = { 0x23, 0xA3, 0x00, 0x00, 0x0C, 0x54, 0x45, 0x53, 0x54, 0x20, 0x20, 0x20, 0x20, 0x20, 0x20, 0x20, 0x38 };
 
             //Description of the Command:
             //[0] Header                        Const = 0x23
@@ -565,7 +615,7 @@ namespace Zanasi4700
         //Automatic Printing Sequence: Control
         private void btn_ExtDataAutoSeq_Click(object sender, EventArgs e)
         {
-            AutomaticSequence();
+            ThreeLinesSequence();
         }
         //Automatic Printing Sequence: Functions
         bool AutomaticSequence()
@@ -585,6 +635,30 @@ namespace Zanasi4700
             }
 
             return bSucc;
+        }
+
+        void ThreeLinesSequence()
+        {
+            //Send to Serial Port
+            ExtData_Index0();
+            Thread.Sleep(500);
+            //ADAM-6050
+            _ADAM6250.Outputs[0] = true;
+            Thread.Sleep(500);
+            _ADAM6250.Outputs[0] = false;
+            //Send to Serial Port
+            ExtData_Index1();
+            Thread.Sleep(500);
+            //ADAM-6050
+            _ADAM6250.Outputs[0] = true;
+            Thread.Sleep(500);
+            _ADAM6250.Outputs[0] = false;
+            //Send to Serial Port
+            ExtData_Index2();
+            //ADAM-6050
+            _ADAM6250.Outputs[0] = true;
+            Thread.Sleep(500);
+            _ADAM6250.Outputs[0] = false;
         }
         //Manual Mode: Build Zanasi Command
         private void btn_BuildZanasiCmd_Click(object sender, EventArgs e)
@@ -611,10 +685,15 @@ namespace Zanasi4700
                     for (int j = 0; j < Line1_Command.Length; j++) { Package_cmd[i,k] += Line1_Command[j].ToString(); }
 
                     //Send to Serial Port
-                    //serialPort1.Write(Line1_Command, 0, Line1_Command.Length);
-                    Thread.Sleep(100);
+                    serialPort1.Write(Line1_Command, 0, Line1_Command.Length);
+                    Thread.Sleep(500);
                 }
                 txt_ReadData.AppendText("Trigger to Printer: Fixture [" + i + "]");
+                //ADAM-6050
+                _ADAM6250.Outputs[0] = true;
+                Thread.Sleep(500);
+                _ADAM6250.Outputs[0] = false;
+
                 txt_ReadData.AppendText("\n");
                 //Add limits to Table
                 tbBuildZanasiCmd.Rows.Add
@@ -721,7 +800,7 @@ namespace Zanasi4700
                                 ODBCLimits[(int)eODBCLimits.Line1] = reader[1].ToString();
                                 ODBCLimits[(int)eODBCLimits.Line2] = reader[2].ToString();
                                 ODBCLimits[(int)eODBCLimits.Line3] = reader[3].ToString();
-                                //Add limits to Table
+                                //Add limits to the Table
                                 tblLimits.Rows.Add
                                 (
                                     ODBCLimits[(int)eODBCLimits.Line1],
@@ -867,6 +946,49 @@ namespace Zanasi4700
         }
         #endregion
 
+        #region Remote IO: ADAM-6050
+        void ADAM6050_Connect()
+        {
+            if (_ADAM6250.Open_Communication())
+            {
+                txt_ReadData.AppendText("Remote IO Connected\n");
+                btn_Connect.Enabled = false;
+                btn_Disconnect.Enabled = true;
+                txt_ADAM6250_IP.Text = _ADAM6250.IP;
+                txt_ADAM6250_Port.Text = _ADAM6250.Port.ToString();
+            }
+            else
+            {
+                btn_Connect.Enabled = true;
+            }
+        }
+
+        void ADAM6050_Disconnect()
+        {
+            if (_ADAM6250.Close_Communication())
+            {
+                txt_ReadData.AppendText("Remote IO Disconnected\n");
+                btn_Connect.Enabled = true;
+                btn_Disconnect.Enabled = false;
+                txt_ADAM6250_IP.Text = "";
+                txt_ADAM6250_Port.Text = "";
+            }
+            else
+            {
+                btn_Disconnect.Enabled = true;
+            }
+        }
+        private void btn_RemoteIOConnect_Click(object sender, EventArgs e)
+        {
+            ADAM6050_Connect();
+        }
+
+        private void btn_RemoteIODisconnect_Click(object sender, EventArgs e)
+        {
+            ADAM6050_Disconnect();
+        }
+        #endregion
+
         #region Information
         //Software Information
         private void SoftwareInfoToolStripMenuItem_Click(object sender, EventArgs e)
@@ -885,7 +1007,9 @@ namespace Zanasi4700
         }
 
 
+
         #endregion
 
+        
     }
 }

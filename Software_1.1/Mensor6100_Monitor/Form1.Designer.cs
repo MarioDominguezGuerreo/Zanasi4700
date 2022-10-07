@@ -75,8 +75,12 @@
             this.cbx_DeviceID = new System.Windows.Forms.ComboBox();
             this.tbl_Limits = new System.Windows.Forms.DataGridView();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.btn_BuildZanasiCmd = new System.Windows.Forms.Button();
+            this.tbl_BuidZanasiCmd = new System.Windows.Forms.DataGridView();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tab_Zanasi4700 = new System.Windows.Forms.TabPage();
+            this.btn_Clear = new System.Windows.Forms.Button();
+            this.txt_ReadData = new System.Windows.Forms.RichTextBox();
             this.tab_ODBC = new System.Windows.Forms.TabPage();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
             this.pnl_ServoControl = new System.Windows.Forms.GroupBox();
@@ -133,10 +137,38 @@
             this.cbx_Reg1Bit12 = new MetroFramework.Controls.MetroCheckBox();
             this.cbx_Reg1Bit13 = new MetroFramework.Controls.MetroCheckBox();
             this.cbx_Reg1Bit4 = new MetroFramework.Controls.MetroCheckBox();
-            this.tbl_BuidZanasiCmd = new System.Windows.Forms.DataGridView();
-            this.btn_BuildZanasiCmd = new System.Windows.Forms.Button();
-            this.btn_Clear = new System.Windows.Forms.Button();
-            this.txt_ReadData = new System.Windows.Forms.RichTextBox();
+            this.tab_RemoteIO = new System.Windows.Forms.TabPage();
+            this.tab_Servo = new System.Windows.Forms.TabPage();
+            this.tabControl3 = new System.Windows.Forms.TabControl();
+            this.tabPage3 = new System.Windows.Forms.TabPage();
+            this.DI7 = new MetroFramework.Controls.MetroCheckBox();
+            this.DI6 = new MetroFramework.Controls.MetroCheckBox();
+            this.DI5 = new MetroFramework.Controls.MetroCheckBox();
+            this.DI4 = new MetroFramework.Controls.MetroCheckBox();
+            this.DI3 = new MetroFramework.Controls.MetroCheckBox();
+            this.DI2 = new MetroFramework.Controls.MetroCheckBox();
+            this.DI1 = new MetroFramework.Controls.MetroCheckBox();
+            this.DI0 = new MetroFramework.Controls.MetroCheckBox();
+            this.tab4 = new System.Windows.Forms.TabPage();
+            this.btn_ForceOutputs = new MetroFramework.Controls.MetroCheckBox();
+            this.pnl_Outputs = new System.Windows.Forms.Panel();
+            this.DO0 = new MetroFramework.Controls.MetroCheckBox();
+            this.DO1 = new MetroFramework.Controls.MetroCheckBox();
+            this.DO5 = new MetroFramework.Controls.MetroCheckBox();
+            this.DO2 = new MetroFramework.Controls.MetroCheckBox();
+            this.DO4 = new MetroFramework.Controls.MetroCheckBox();
+            this.DO3 = new MetroFramework.Controls.MetroCheckBox();
+            this.ServoDisconnect = new System.Windows.Forms.Button();
+            this.btn_ServoConnect = new System.Windows.Forms.Button();
+            this.groupBox5 = new System.Windows.Forms.GroupBox();
+            this.txt_ADAM6250_Port = new System.Windows.Forms.TextBox();
+            this.txt_ADAM6250_IP = new System.Windows.Forms.TextBox();
+            this.btn_RemoteIODisconnect = new System.Windows.Forms.Button();
+            this.btn_RemoteIOConnect = new System.Windows.Forms.Button();
+            this.DI11 = new MetroFramework.Controls.MetroCheckBox();
+            this.DI10 = new MetroFramework.Controls.MetroCheckBox();
+            this.DI9 = new MetroFramework.Controls.MetroCheckBox();
+            this.DI8 = new MetroFramework.Controls.MetroCheckBox();
             this.Header.SuspendLayout();
             this.Footer.SuspendLayout();
             this.cntr_Comm.SuspendLayout();
@@ -146,6 +178,7 @@
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.tbl_Limits)).BeginInit();
             this.groupBox3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.tbl_BuidZanasiCmd)).BeginInit();
             this.tabControl1.SuspendLayout();
             this.tab_Zanasi4700.SuspendLayout();
             this.tab_ODBC.SuspendLayout();
@@ -155,7 +188,13 @@
             this.tabPage1.SuspendLayout();
             this.tabPage2.SuspendLayout();
             this.pnl_CMMO_Control.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.tbl_BuidZanasiCmd)).BeginInit();
+            this.tab_RemoteIO.SuspendLayout();
+            this.tab_Servo.SuspendLayout();
+            this.tabControl3.SuspendLayout();
+            this.tabPage3.SuspendLayout();
+            this.tab4.SuspendLayout();
+            this.pnl_Outputs.SuspendLayout();
+            this.groupBox5.SuspendLayout();
             this.SuspendLayout();
             // 
             // Header
@@ -167,7 +206,7 @@
             this.Header.Location = new System.Drawing.Point(0, 0);
             this.Header.Name = "Header";
             this.Header.RenderMode = System.Windows.Forms.ToolStripRenderMode.Professional;
-            this.Header.Size = new System.Drawing.Size(771, 28);
+            this.Header.Size = new System.Drawing.Size(492, 28);
             this.Header.TabIndex = 0;
             // 
             // helpToolStripMenuItem
@@ -200,11 +239,11 @@
             this.Footer.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.lb_Hora,
             this.lb_Fecha});
-            this.Footer.Location = new System.Drawing.Point(0, 700);
+            this.Footer.Location = new System.Drawing.Point(0, 766);
             this.Footer.Name = "Footer";
             this.Footer.Padding = new System.Windows.Forms.Padding(19, 0, 1, 0);
             this.Footer.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.Footer.Size = new System.Drawing.Size(771, 25);
+            this.Footer.Size = new System.Drawing.Size(492, 25);
             this.Footer.TabIndex = 1;
             // 
             // lb_Hora
@@ -226,7 +265,7 @@
             // 
             // btn_Scan
             // 
-            this.btn_Scan.Location = new System.Drawing.Point(8, 28);
+            this.btn_Scan.Location = new System.Drawing.Point(22, 27);
             this.btn_Scan.Margin = new System.Windows.Forms.Padding(4);
             this.btn_Scan.Name = "btn_Scan";
             this.btn_Scan.Size = new System.Drawing.Size(120, 31);
@@ -241,11 +280,11 @@
             this.cntr_Comm.Controls.Add(this.btn_Disconnect);
             this.cntr_Comm.Controls.Add(this.btn_Connect);
             this.cntr_Comm.Controls.Add(this.btn_Scan);
-            this.cntr_Comm.Location = new System.Drawing.Point(16, 46);
+            this.cntr_Comm.Location = new System.Drawing.Point(7, 23);
             this.cntr_Comm.Margin = new System.Windows.Forms.Padding(4);
             this.cntr_Comm.Name = "cntr_Comm";
             this.cntr_Comm.Padding = new System.Windows.Forms.Padding(4);
-            this.cntr_Comm.Size = new System.Drawing.Size(271, 110);
+            this.cntr_Comm.Size = new System.Drawing.Size(448, 110);
             this.cntr_Comm.TabIndex = 3;
             this.cntr_Comm.TabStop = false;
             this.cntr_Comm.Text = "Serial Communication | RS232";
@@ -253,7 +292,7 @@
             // cbx_Ports
             // 
             this.cbx_Ports.FormattingEnabled = true;
-            this.cbx_Ports.Location = new System.Drawing.Point(136, 32);
+            this.cbx_Ports.Location = new System.Drawing.Point(150, 31);
             this.cbx_Ports.Margin = new System.Windows.Forms.Padding(4);
             this.cbx_Ports.Name = "cbx_Ports";
             this.cbx_Ports.Size = new System.Drawing.Size(120, 24);
@@ -261,7 +300,7 @@
             // 
             // btn_Disconnect
             // 
-            this.btn_Disconnect.Location = new System.Drawing.Point(136, 66);
+            this.btn_Disconnect.Location = new System.Drawing.Point(308, 66);
             this.btn_Disconnect.Margin = new System.Windows.Forms.Padding(4);
             this.btn_Disconnect.Name = "btn_Disconnect";
             this.btn_Disconnect.Size = new System.Drawing.Size(120, 31);
@@ -272,7 +311,7 @@
             // 
             // btn_Connect
             // 
-            this.btn_Connect.Location = new System.Drawing.Point(8, 66);
+            this.btn_Connect.Location = new System.Drawing.Point(308, 27);
             this.btn_Connect.Margin = new System.Windows.Forms.Padding(4);
             this.btn_Connect.Name = "btn_Connect";
             this.btn_Connect.Size = new System.Drawing.Size(120, 31);
@@ -290,11 +329,11 @@
             this.cntr_Cmd.Controls.Add(this.label2);
             this.cntr_Cmd.Controls.Add(this.txt_MsgIndex);
             this.cntr_Cmd.Controls.Add(this.btn_SendData);
-            this.cntr_Cmd.Location = new System.Drawing.Point(7, 8);
+            this.cntr_Cmd.Location = new System.Drawing.Point(7, 152);
             this.cntr_Cmd.Margin = new System.Windows.Forms.Padding(4);
             this.cntr_Cmd.Name = "cntr_Cmd";
             this.cntr_Cmd.Padding = new System.Windows.Forms.Padding(4);
-            this.cntr_Cmd.Size = new System.Drawing.Size(449, 330);
+            this.cntr_Cmd.Size = new System.Drawing.Size(449, 332);
             this.cntr_Cmd.TabIndex = 4;
             this.cntr_Cmd.TabStop = false;
             this.cntr_Cmd.Text = "Zanasi 4700 Messages";
@@ -302,7 +341,7 @@
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(350, 35);
+            this.label6.Location = new System.Drawing.Point(354, 43);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(35, 17);
             this.label6.TabIndex = 29;
@@ -312,7 +351,7 @@
             // 
             this.txt_CustomSend_Size.AutoSize = true;
             this.txt_CustomSend_Size.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt_CustomSend_Size.Location = new System.Drawing.Point(392, 30);
+            this.txt_CustomSend_Size.Location = new System.Drawing.Point(396, 38);
             this.txt_CustomSend_Size.Name = "txt_CustomSend_Size";
             this.txt_CustomSend_Size.Size = new System.Drawing.Size(34, 25);
             this.txt_CustomSend_Size.TabIndex = 30;
@@ -323,7 +362,7 @@
             // 
             this.txt_CustomSend.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
             this.txt_CustomSend.Font = new System.Drawing.Font("Consolas", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt_CustomSend.Location = new System.Drawing.Point(148, 30);
+            this.txt_CustomSend.Location = new System.Drawing.Point(152, 38);
             this.txt_CustomSend.Margin = new System.Windows.Forms.Padding(4);
             this.txt_CustomSend.MaxLength = 100;
             this.txt_CustomSend.Name = "txt_CustomSend";
@@ -347,7 +386,7 @@
             this.groupBox1.Controls.Add(this.label3);
             this.groupBox1.Controls.Add(this.txt_ExtData_Index1);
             this.groupBox1.Controls.Add(this.txt_ExtData_Index0_Size);
-            this.groupBox1.Location = new System.Drawing.Point(12, 117);
+            this.groupBox1.Location = new System.Drawing.Point(16, 109);
             this.groupBox1.Margin = new System.Windows.Forms.Padding(4);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Padding = new System.Windows.Forms.Padding(4);
@@ -521,7 +560,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(21, 74);
+            this.label2.Location = new System.Drawing.Point(25, 82);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(145, 17);
             this.label2.TabIndex = 18;
@@ -530,7 +569,7 @@
             // txt_MsgIndex
             // 
             this.txt_MsgIndex.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt_MsgIndex.Location = new System.Drawing.Point(173, 65);
+            this.txt_MsgIndex.Location = new System.Drawing.Point(177, 73);
             this.txt_MsgIndex.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txt_MsgIndex.Name = "txt_MsgIndex";
             this.txt_MsgIndex.Size = new System.Drawing.Size(64, 30);
@@ -538,7 +577,7 @@
             // 
             // btn_SendData
             // 
-            this.btn_SendData.Location = new System.Drawing.Point(20, 28);
+            this.btn_SendData.Location = new System.Drawing.Point(24, 36);
             this.btn_SendData.Margin = new System.Windows.Forms.Padding(4);
             this.btn_SendData.Name = "btn_SendData";
             this.btn_SendData.Size = new System.Drawing.Size(120, 31);
@@ -619,19 +658,44 @@
             this.groupBox3.Controls.Add(this.tbl_BuidZanasiCmd);
             this.groupBox3.Location = new System.Drawing.Point(6, 201);
             this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(452, 418);
+            this.groupBox3.Size = new System.Drawing.Size(452, 481);
             this.groupBox3.TabIndex = 34;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Pallet | Prepare Data Structure";
+            // 
+            // btn_BuildZanasiCmd
+            // 
+            this.btn_BuildZanasiCmd.Location = new System.Drawing.Point(8, 48);
+            this.btn_BuildZanasiCmd.Margin = new System.Windows.Forms.Padding(4);
+            this.btn_BuildZanasiCmd.Name = "btn_BuildZanasiCmd";
+            this.btn_BuildZanasiCmd.Size = new System.Drawing.Size(248, 31);
+            this.btn_BuildZanasiCmd.TabIndex = 36;
+            this.btn_BuildZanasiCmd.Text = "<8> Build Zanasi Command";
+            this.btn_BuildZanasiCmd.UseVisualStyleBackColor = true;
+            this.btn_BuildZanasiCmd.Click += new System.EventHandler(this.btn_BuildZanasiCmd_Click);
+            // 
+            // tbl_BuidZanasiCmd
+            // 
+            this.tbl_BuidZanasiCmd.BackgroundColor = System.Drawing.SystemColors.Control;
+            this.tbl_BuidZanasiCmd.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.tbl_BuidZanasiCmd.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.tbl_BuidZanasiCmd.Location = new System.Drawing.Point(8, 86);
+            this.tbl_BuidZanasiCmd.Name = "tbl_BuidZanasiCmd";
+            this.tbl_BuidZanasiCmd.RowHeadersVisible = false;
+            this.tbl_BuidZanasiCmd.RowTemplate.Height = 24;
+            this.tbl_BuidZanasiCmd.Size = new System.Drawing.Size(438, 389);
+            this.tbl_BuidZanasiCmd.TabIndex = 34;
             // 
             // tabControl1
             // 
             this.tabControl1.Controls.Add(this.tab_Zanasi4700);
             this.tabControl1.Controls.Add(this.tab_ODBC);
-            this.tabControl1.Location = new System.Drawing.Point(294, 46);
+            this.tabControl1.Controls.Add(this.tab_RemoteIO);
+            this.tabControl1.Controls.Add(this.tab_Servo);
+            this.tabControl1.Location = new System.Drawing.Point(12, 38);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(472, 651);
+            this.tabControl1.Size = new System.Drawing.Size(472, 717);
             this.tabControl1.TabIndex = 35;
             // 
             // tab_Zanasi4700
@@ -640,12 +704,41 @@
             this.tab_Zanasi4700.Controls.Add(this.btn_Clear);
             this.tab_Zanasi4700.Controls.Add(this.txt_ReadData);
             this.tab_Zanasi4700.Controls.Add(this.cntr_Cmd);
+            this.tab_Zanasi4700.Controls.Add(this.cntr_Comm);
             this.tab_Zanasi4700.Location = new System.Drawing.Point(4, 25);
             this.tab_Zanasi4700.Name = "tab_Zanasi4700";
             this.tab_Zanasi4700.Padding = new System.Windows.Forms.Padding(3);
-            this.tab_Zanasi4700.Size = new System.Drawing.Size(464, 613);
+            this.tab_Zanasi4700.Size = new System.Drawing.Size(464, 688);
             this.tab_Zanasi4700.TabIndex = 0;
             this.tab_Zanasi4700.Text = "Zanasi 4700 Printer Inkjet";
+            // 
+            // btn_Clear
+            // 
+            this.btn_Clear.Location = new System.Drawing.Point(6, 650);
+            this.btn_Clear.Margin = new System.Windows.Forms.Padding(4);
+            this.btn_Clear.Name = "btn_Clear";
+            this.btn_Clear.Size = new System.Drawing.Size(120, 31);
+            this.btn_Clear.TabIndex = 12;
+            this.btn_Clear.Text = "Clear Log Data";
+            this.btn_Clear.UseVisualStyleBackColor = true;
+            this.btn_Clear.Click += new System.EventHandler(this.btn_Clear_Click_1);
+            // 
+            // txt_ReadData
+            // 
+            this.txt_ReadData.BackColor = System.Drawing.SystemColors.Control;
+            this.txt_ReadData.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txt_ReadData.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.txt_ReadData.EnableAutoDragDrop = true;
+            this.txt_ReadData.Font = new System.Drawing.Font("Consolas", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txt_ReadData.Location = new System.Drawing.Point(6, 492);
+            this.txt_ReadData.Margin = new System.Windows.Forms.Padding(4);
+            this.txt_ReadData.Name = "txt_ReadData";
+            this.txt_ReadData.ReadOnly = true;
+            this.txt_ReadData.ScrollBars = System.Windows.Forms.RichTextBoxScrollBars.ForcedBoth;
+            this.txt_ReadData.ShowSelectionMargin = true;
+            this.txt_ReadData.Size = new System.Drawing.Size(449, 189);
+            this.txt_ReadData.TabIndex = 11;
+            this.txt_ReadData.Text = "";
             // 
             // tab_ODBC
             // 
@@ -655,13 +748,14 @@
             this.tab_ODBC.Location = new System.Drawing.Point(4, 25);
             this.tab_ODBC.Name = "tab_ODBC";
             this.tab_ODBC.Padding = new System.Windows.Forms.Padding(3);
-            this.tab_ODBC.Size = new System.Drawing.Size(464, 622);
+            this.tab_ODBC.Size = new System.Drawing.Size(464, 688);
             this.tab_ODBC.TabIndex = 1;
             this.tab_ODBC.Text = "ODBC Database";
             // 
             // groupBox4
             // 
-            this.groupBox4.Controls.Add(this.pnl_ServoControl);
+            this.groupBox4.Controls.Add(this.ServoDisconnect);
+            this.groupBox4.Controls.Add(this.btn_ServoConnect);
             this.groupBox4.Controls.Add(this.label96);
             this.groupBox4.Controls.Add(this.label95);
             this.groupBox4.Controls.Add(this.txt_CMMO_RecSelected);
@@ -670,9 +764,9 @@
             this.groupBox4.Controls.Add(this.txt_CMMOConnStatus);
             this.groupBox4.Controls.Add(this.label67);
             this.groupBox4.Controls.Add(this.btn_CMMO_Remote);
-            this.groupBox4.Location = new System.Drawing.Point(16, 163);
+            this.groupBox4.Location = new System.Drawing.Point(95, 27);
             this.groupBox4.Name = "groupBox4";
-            this.groupBox4.Size = new System.Drawing.Size(271, 234);
+            this.groupBox4.Size = new System.Drawing.Size(271, 167);
             this.groupBox4.TabIndex = 36;
             this.groupBox4.TabStop = false;
             this.groupBox4.Text = "FESTO Servo motor";
@@ -684,9 +778,9 @@
             this.pnl_ServoControl.Controls.Add(this.btn_CMMO_SelectRecord_2);
             this.pnl_ServoControl.Controls.Add(this.btn_CMMO_Start);
             this.pnl_ServoControl.Controls.Add(this.btn_CMMO_Stop);
-            this.pnl_ServoControl.Location = new System.Drawing.Point(11, 116);
+            this.pnl_ServoControl.Location = new System.Drawing.Point(95, 246);
             this.pnl_ServoControl.Name = "pnl_ServoControl";
-            this.pnl_ServoControl.Size = new System.Drawing.Size(248, 110);
+            this.pnl_ServoControl.Size = new System.Drawing.Size(271, 110);
             this.pnl_ServoControl.TabIndex = 564;
             this.pnl_ServoControl.TabStop = false;
             this.pnl_ServoControl.Text = "Control manual";
@@ -699,7 +793,7 @@
             this.btn_CMMO_SelectRecord_5.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(128)))));
             this.btn_CMMO_SelectRecord_5.FlatAppearance.CheckedBackColor = System.Drawing.Color.Orange;
             this.btn_CMMO_SelectRecord_5.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_CMMO_SelectRecord_5.Location = new System.Drawing.Point(8, 72);
+            this.btn_CMMO_SelectRecord_5.Location = new System.Drawing.Point(10, 72);
             this.btn_CMMO_SelectRecord_5.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btn_CMMO_SelectRecord_5.Name = "btn_CMMO_SelectRecord_5";
             this.btn_CMMO_SelectRecord_5.Size = new System.Drawing.Size(105, 29);
@@ -719,7 +813,7 @@
             this.btn_CMMO_SelectRecord_1.FlatAppearance.CheckedBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
             this.btn_CMMO_SelectRecord_1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_CMMO_SelectRecord_1.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_CMMO_SelectRecord_1.Location = new System.Drawing.Point(120, 72);
+            this.btn_CMMO_SelectRecord_1.Location = new System.Drawing.Point(147, 72);
             this.btn_CMMO_SelectRecord_1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btn_CMMO_SelectRecord_1.Name = "btn_CMMO_SelectRecord_1";
             this.btn_CMMO_SelectRecord_1.Size = new System.Drawing.Size(49, 29);
@@ -738,7 +832,7 @@
             this.btn_CMMO_SelectRecord_2.FlatAppearance.CheckedBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
             this.btn_CMMO_SelectRecord_2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_CMMO_SelectRecord_2.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_CMMO_SelectRecord_2.Location = new System.Drawing.Point(177, 71);
+            this.btn_CMMO_SelectRecord_2.Location = new System.Drawing.Point(204, 71);
             this.btn_CMMO_SelectRecord_2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btn_CMMO_SelectRecord_2.Name = "btn_CMMO_SelectRecord_2";
             this.btn_CMMO_SelectRecord_2.Size = new System.Drawing.Size(61, 29);
@@ -774,7 +868,7 @@
             this.btn_CMMO_Stop.FlatAppearance.CheckedBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
             this.btn_CMMO_Stop.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_CMMO_Stop.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_CMMO_Stop.Location = new System.Drawing.Point(120, 28);
+            this.btn_CMMO_Stop.Location = new System.Drawing.Point(147, 28);
             this.btn_CMMO_Stop.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btn_CMMO_Stop.Name = "btn_CMMO_Stop";
             this.btn_CMMO_Stop.Size = new System.Drawing.Size(118, 39);
@@ -877,7 +971,7 @@
             // 
             this.tabControl2.Controls.Add(this.tabPage1);
             this.tabControl2.Controls.Add(this.tabPage2);
-            this.tabControl2.Location = new System.Drawing.Point(16, 402);
+            this.tabControl2.Location = new System.Drawing.Point(95, 361);
             this.tabControl2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.tabControl2.Name = "tabControl2";
             this.tabControl2.SelectedIndex = 0;
@@ -1521,65 +1615,550 @@
             this.cbx_Reg1Bit4.Theme = MetroFramework.MetroThemeStyle.Dark;
             this.cbx_Reg1Bit4.UseVisualStyleBackColor = true;
             // 
-            // tbl_BuidZanasiCmd
+            // tab_RemoteIO
             // 
-            this.tbl_BuidZanasiCmd.BackgroundColor = System.Drawing.SystemColors.Control;
-            this.tbl_BuidZanasiCmd.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.tbl_BuidZanasiCmd.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.tbl_BuidZanasiCmd.Location = new System.Drawing.Point(8, 86);
-            this.tbl_BuidZanasiCmd.Name = "tbl_BuidZanasiCmd";
-            this.tbl_BuidZanasiCmd.RowHeadersVisible = false;
-            this.tbl_BuidZanasiCmd.RowTemplate.Height = 24;
-            this.tbl_BuidZanasiCmd.Size = new System.Drawing.Size(438, 329);
-            this.tbl_BuidZanasiCmd.TabIndex = 34;
+            this.tab_RemoteIO.BackColor = System.Drawing.SystemColors.Control;
+            this.tab_RemoteIO.Controls.Add(this.groupBox5);
+            this.tab_RemoteIO.Controls.Add(this.tabControl3);
+            this.tab_RemoteIO.Location = new System.Drawing.Point(4, 25);
+            this.tab_RemoteIO.Name = "tab_RemoteIO";
+            this.tab_RemoteIO.Size = new System.Drawing.Size(464, 688);
+            this.tab_RemoteIO.TabIndex = 2;
+            this.tab_RemoteIO.Text = "RemoteIO";
             // 
-            // btn_BuildZanasiCmd
+            // tab_Servo
             // 
-            this.btn_BuildZanasiCmd.Location = new System.Drawing.Point(8, 48);
-            this.btn_BuildZanasiCmd.Margin = new System.Windows.Forms.Padding(4);
-            this.btn_BuildZanasiCmd.Name = "btn_BuildZanasiCmd";
-            this.btn_BuildZanasiCmd.Size = new System.Drawing.Size(248, 31);
-            this.btn_BuildZanasiCmd.TabIndex = 36;
-            this.btn_BuildZanasiCmd.Text = "<8> Build Zanasi Command";
-            this.btn_BuildZanasiCmd.UseVisualStyleBackColor = true;
-            this.btn_BuildZanasiCmd.Click += new System.EventHandler(this.btn_BuildZanasiCmd_Click);
+            this.tab_Servo.BackColor = System.Drawing.SystemColors.Control;
+            this.tab_Servo.Controls.Add(this.pnl_ServoControl);
+            this.tab_Servo.Controls.Add(this.tabControl2);
+            this.tab_Servo.Controls.Add(this.groupBox4);
+            this.tab_Servo.Location = new System.Drawing.Point(4, 25);
+            this.tab_Servo.Name = "tab_Servo";
+            this.tab_Servo.Size = new System.Drawing.Size(464, 688);
+            this.tab_Servo.TabIndex = 3;
+            this.tab_Servo.Text = "Servo";
             // 
-            // btn_Clear
+            // tabControl3
             // 
-            this.btn_Clear.Location = new System.Drawing.Point(7, 578);
-            this.btn_Clear.Margin = new System.Windows.Forms.Padding(4);
-            this.btn_Clear.Name = "btn_Clear";
-            this.btn_Clear.Size = new System.Drawing.Size(120, 31);
-            this.btn_Clear.TabIndex = 12;
-            this.btn_Clear.Text = "Clear Log Data";
-            this.btn_Clear.UseVisualStyleBackColor = true;
+            this.tabControl3.Controls.Add(this.tabPage3);
+            this.tabControl3.Controls.Add(this.tab4);
+            this.tabControl3.Location = new System.Drawing.Point(75, 235);
+            this.tabControl3.Name = "tabControl3";
+            this.tabControl3.SelectedIndex = 0;
+            this.tabControl3.Size = new System.Drawing.Size(270, 330);
+            this.tabControl3.TabIndex = 33;
             // 
-            // txt_ReadData
+            // tabPage3
             // 
-            this.txt_ReadData.BackColor = System.Drawing.SystemColors.Control;
-            this.txt_ReadData.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txt_ReadData.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.txt_ReadData.EnableAutoDragDrop = true;
-            this.txt_ReadData.Font = new System.Drawing.Font("Consolas", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt_ReadData.Location = new System.Drawing.Point(7, 342);
-            this.txt_ReadData.Margin = new System.Windows.Forms.Padding(4);
-            this.txt_ReadData.Name = "txt_ReadData";
-            this.txt_ReadData.ReadOnly = true;
-            this.txt_ReadData.ScrollBars = System.Windows.Forms.RichTextBoxScrollBars.ForcedBoth;
-            this.txt_ReadData.ShowSelectionMargin = true;
-            this.txt_ReadData.Size = new System.Drawing.Size(449, 267);
-            this.txt_ReadData.TabIndex = 11;
-            this.txt_ReadData.Text = "";
+            this.tabPage3.BackColor = System.Drawing.SystemColors.Control;
+            this.tabPage3.Controls.Add(this.DI11);
+            this.tabPage3.Controls.Add(this.DI10);
+            this.tabPage3.Controls.Add(this.DI9);
+            this.tabPage3.Controls.Add(this.DI8);
+            this.tabPage3.Controls.Add(this.DI7);
+            this.tabPage3.Controls.Add(this.DI6);
+            this.tabPage3.Controls.Add(this.DI5);
+            this.tabPage3.Controls.Add(this.DI4);
+            this.tabPage3.Controls.Add(this.DI3);
+            this.tabPage3.Controls.Add(this.DI2);
+            this.tabPage3.Controls.Add(this.DI1);
+            this.tabPage3.Controls.Add(this.DI0);
+            this.tabPage3.Location = new System.Drawing.Point(4, 25);
+            this.tabPage3.Name = "tabPage3";
+            this.tabPage3.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage3.Size = new System.Drawing.Size(262, 301);
+            this.tabPage3.TabIndex = 0;
+            this.tabPage3.Text = "Inputs";
+            // 
+            // DI7
+            // 
+            this.DI7.AutoSize = true;
+            this.DI7.BackColor = System.Drawing.SystemColors.Control;
+            this.DI7.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.DI7.CustomBackground = true;
+            this.DI7.CustomForeColor = true;
+            this.DI7.Enabled = false;
+            this.DI7.FlatAppearance.BorderColor = System.Drawing.Color.Black;
+            this.DI7.FlatAppearance.CheckedBackColor = System.Drawing.Color.Lime;
+            this.DI7.ForeColor = System.Drawing.Color.Gray;
+            this.DI7.Location = new System.Drawing.Point(10, 166);
+            this.DI7.Name = "DI7";
+            this.DI7.Size = new System.Drawing.Size(47, 17);
+            this.DI7.Style = MetroFramework.MetroColorStyle.Green;
+            this.DI7.TabIndex = 26;
+            this.DI7.Text = "DI 7";
+            this.DI7.UseStyleColors = true;
+            this.DI7.UseVisualStyleBackColor = false;
+            // 
+            // DI6
+            // 
+            this.DI6.AutoSize = true;
+            this.DI6.BackColor = System.Drawing.SystemColors.Control;
+            this.DI6.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.DI6.CustomBackground = true;
+            this.DI6.CustomForeColor = true;
+            this.DI6.Enabled = false;
+            this.DI6.FlatAppearance.BorderColor = System.Drawing.Color.Black;
+            this.DI6.FlatAppearance.CheckedBackColor = System.Drawing.Color.Lime;
+            this.DI6.ForeColor = System.Drawing.Color.Gray;
+            this.DI6.Location = new System.Drawing.Point(10, 143);
+            this.DI6.Name = "DI6";
+            this.DI6.Size = new System.Drawing.Size(51, 17);
+            this.DI6.Style = MetroFramework.MetroColorStyle.Green;
+            this.DI6.TabIndex = 25;
+            this.DI6.Text = "DI 6 ";
+            this.DI6.UseStyleColors = true;
+            this.DI6.UseVisualStyleBackColor = false;
+            // 
+            // DI5
+            // 
+            this.DI5.AutoSize = true;
+            this.DI5.BackColor = System.Drawing.SystemColors.Control;
+            this.DI5.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.DI5.CustomBackground = true;
+            this.DI5.CustomForeColor = true;
+            this.DI5.Enabled = false;
+            this.DI5.FlatAppearance.BorderColor = System.Drawing.Color.Black;
+            this.DI5.FlatAppearance.CheckedBackColor = System.Drawing.Color.Lime;
+            this.DI5.ForeColor = System.Drawing.Color.Gray;
+            this.DI5.Location = new System.Drawing.Point(10, 120);
+            this.DI5.Name = "DI5";
+            this.DI5.Size = new System.Drawing.Size(47, 17);
+            this.DI5.Style = MetroFramework.MetroColorStyle.Green;
+            this.DI5.TabIndex = 24;
+            this.DI5.Text = "DI 5";
+            this.DI5.UseStyleColors = true;
+            this.DI5.UseVisualStyleBackColor = false;
+            // 
+            // DI4
+            // 
+            this.DI4.AutoSize = true;
+            this.DI4.BackColor = System.Drawing.SystemColors.Control;
+            this.DI4.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.DI4.CustomBackground = true;
+            this.DI4.CustomForeColor = true;
+            this.DI4.Enabled = false;
+            this.DI4.FlatAppearance.BorderColor = System.Drawing.Color.Black;
+            this.DI4.FlatAppearance.CheckedBackColor = System.Drawing.Color.Lime;
+            this.DI4.ForeColor = System.Drawing.Color.Gray;
+            this.DI4.Location = new System.Drawing.Point(10, 97);
+            this.DI4.Name = "DI4";
+            this.DI4.Size = new System.Drawing.Size(47, 17);
+            this.DI4.Style = MetroFramework.MetroColorStyle.Green;
+            this.DI4.TabIndex = 23;
+            this.DI4.Text = "DI 4";
+            this.DI4.UseStyleColors = true;
+            this.DI4.UseVisualStyleBackColor = false;
+            // 
+            // DI3
+            // 
+            this.DI3.AutoSize = true;
+            this.DI3.BackColor = System.Drawing.SystemColors.Control;
+            this.DI3.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.DI3.CustomBackground = true;
+            this.DI3.CustomForeColor = true;
+            this.DI3.Enabled = false;
+            this.DI3.FlatAppearance.BorderColor = System.Drawing.Color.Black;
+            this.DI3.FlatAppearance.CheckedBackColor = System.Drawing.Color.Lime;
+            this.DI3.ForeColor = System.Drawing.Color.Gray;
+            this.DI3.Location = new System.Drawing.Point(10, 74);
+            this.DI3.Name = "DI3";
+            this.DI3.Size = new System.Drawing.Size(51, 17);
+            this.DI3.Style = MetroFramework.MetroColorStyle.Green;
+            this.DI3.TabIndex = 22;
+            this.DI3.Text = "DI 3 ";
+            this.DI3.UseStyleColors = true;
+            this.DI3.UseVisualStyleBackColor = false;
+            // 
+            // DI2
+            // 
+            this.DI2.AutoSize = true;
+            this.DI2.BackColor = System.Drawing.SystemColors.Control;
+            this.DI2.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.DI2.CustomBackground = true;
+            this.DI2.CustomForeColor = true;
+            this.DI2.Enabled = false;
+            this.DI2.FlatAppearance.BorderColor = System.Drawing.Color.Black;
+            this.DI2.FlatAppearance.CheckedBackColor = System.Drawing.Color.Lime;
+            this.DI2.ForeColor = System.Drawing.Color.Gray;
+            this.DI2.Location = new System.Drawing.Point(10, 51);
+            this.DI2.Name = "DI2";
+            this.DI2.Size = new System.Drawing.Size(47, 17);
+            this.DI2.Style = MetroFramework.MetroColorStyle.Green;
+            this.DI2.TabIndex = 21;
+            this.DI2.Text = "DI 2";
+            this.DI2.UseStyleColors = true;
+            this.DI2.UseVisualStyleBackColor = false;
+            // 
+            // DI1
+            // 
+            this.DI1.AutoSize = true;
+            this.DI1.BackColor = System.Drawing.SystemColors.Control;
+            this.DI1.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.DI1.CustomBackground = true;
+            this.DI1.CustomForeColor = true;
+            this.DI1.Enabled = false;
+            this.DI1.FlatAppearance.BorderColor = System.Drawing.Color.Black;
+            this.DI1.FlatAppearance.CheckedBackColor = System.Drawing.Color.Lime;
+            this.DI1.ForeColor = System.Drawing.Color.Gray;
+            this.DI1.Location = new System.Drawing.Point(10, 28);
+            this.DI1.Name = "DI1";
+            this.DI1.Size = new System.Drawing.Size(47, 17);
+            this.DI1.Style = MetroFramework.MetroColorStyle.Green;
+            this.DI1.TabIndex = 20;
+            this.DI1.Text = "DI 1";
+            this.DI1.UseStyleColors = true;
+            this.DI1.UseVisualStyleBackColor = false;
+            // 
+            // DI0
+            // 
+            this.DI0.AutoSize = true;
+            this.DI0.BackColor = System.Drawing.SystemColors.Control;
+            this.DI0.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.DI0.CustomBackground = true;
+            this.DI0.CustomForeColor = true;
+            this.DI0.Enabled = false;
+            this.DI0.FlatAppearance.BorderColor = System.Drawing.Color.Black;
+            this.DI0.FlatAppearance.CheckedBackColor = System.Drawing.Color.Lime;
+            this.DI0.ForeColor = System.Drawing.Color.Gray;
+            this.DI0.Location = new System.Drawing.Point(10, 5);
+            this.DI0.Name = "DI0";
+            this.DI0.Size = new System.Drawing.Size(47, 17);
+            this.DI0.Style = MetroFramework.MetroColorStyle.Green;
+            this.DI0.TabIndex = 19;
+            this.DI0.Text = "DI 0";
+            this.DI0.UseStyleColors = true;
+            this.DI0.UseVisualStyleBackColor = false;
+            // 
+            // tab4
+            // 
+            this.tab4.BackColor = System.Drawing.SystemColors.Control;
+            this.tab4.Controls.Add(this.btn_ForceOutputs);
+            this.tab4.Controls.Add(this.pnl_Outputs);
+            this.tab4.Location = new System.Drawing.Point(4, 25);
+            this.tab4.Name = "tab4";
+            this.tab4.Padding = new System.Windows.Forms.Padding(3);
+            this.tab4.Size = new System.Drawing.Size(262, 301);
+            this.tab4.TabIndex = 1;
+            this.tab4.Text = "Outputs";
+            // 
+            // btn_ForceOutputs
+            // 
+            this.btn_ForceOutputs.AutoSize = true;
+            this.btn_ForceOutputs.BackColor = System.Drawing.SystemColors.Control;
+            this.btn_ForceOutputs.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btn_ForceOutputs.CustomBackground = true;
+            this.btn_ForceOutputs.CustomForeColor = true;
+            this.btn_ForceOutputs.FlatAppearance.BorderColor = System.Drawing.Color.Black;
+            this.btn_ForceOutputs.FlatAppearance.CheckedBackColor = System.Drawing.Color.Lime;
+            this.btn_ForceOutputs.ForeColor = System.Drawing.Color.Black;
+            this.btn_ForceOutputs.Location = new System.Drawing.Point(144, 9);
+            this.btn_ForceOutputs.Name = "btn_ForceOutputs";
+            this.btn_ForceOutputs.Size = new System.Drawing.Size(56, 17);
+            this.btn_ForceOutputs.Style = MetroFramework.MetroColorStyle.Green;
+            this.btn_ForceOutputs.TabIndex = 33;
+            this.btn_ForceOutputs.Text = "Force";
+            this.btn_ForceOutputs.UseStyleColors = true;
+            this.btn_ForceOutputs.UseVisualStyleBackColor = false;
+            // 
+            // pnl_Outputs
+            // 
+            this.pnl_Outputs.Controls.Add(this.DO0);
+            this.pnl_Outputs.Controls.Add(this.DO1);
+            this.pnl_Outputs.Controls.Add(this.DO5);
+            this.pnl_Outputs.Controls.Add(this.DO2);
+            this.pnl_Outputs.Controls.Add(this.DO4);
+            this.pnl_Outputs.Controls.Add(this.DO3);
+            this.pnl_Outputs.Location = new System.Drawing.Point(6, 6);
+            this.pnl_Outputs.Name = "pnl_Outputs";
+            this.pnl_Outputs.Size = new System.Drawing.Size(132, 289);
+            this.pnl_Outputs.TabIndex = 31;
+            // 
+            // DO0
+            // 
+            this.DO0.AutoSize = true;
+            this.DO0.BackColor = System.Drawing.SystemColors.Control;
+            this.DO0.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.DO0.CustomBackground = true;
+            this.DO0.CustomForeColor = true;
+            this.DO0.FlatAppearance.BorderColor = System.Drawing.Color.Black;
+            this.DO0.FlatAppearance.CheckedBackColor = System.Drawing.Color.Lime;
+            this.DO0.ForeColor = System.Drawing.SystemColors.Highlight;
+            this.DO0.Location = new System.Drawing.Point(3, 3);
+            this.DO0.Name = "DO0";
+            this.DO0.Size = new System.Drawing.Size(92, 17);
+            this.DO0.Style = MetroFramework.MetroColorStyle.Green;
+            this.DO0.TabIndex = 26;
+            this.DO0.Text = "DO 0 (Print)";
+            this.DO0.UseStyleColors = true;
+            this.DO0.UseVisualStyleBackColor = false;
+            // 
+            // DO1
+            // 
+            this.DO1.AutoSize = true;
+            this.DO1.BackColor = System.Drawing.SystemColors.Control;
+            this.DO1.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.DO1.CustomBackground = true;
+            this.DO1.CustomForeColor = true;
+            this.DO1.FlatAppearance.BorderColor = System.Drawing.Color.Black;
+            this.DO1.FlatAppearance.CheckedBackColor = System.Drawing.Color.Lime;
+            this.DO1.ForeColor = System.Drawing.SystemColors.Highlight;
+            this.DO1.Location = new System.Drawing.Point(3, 26);
+            this.DO1.Name = "DO1";
+            this.DO1.Size = new System.Drawing.Size(54, 17);
+            this.DO1.Style = MetroFramework.MetroColorStyle.Green;
+            this.DO1.TabIndex = 27;
+            this.DO1.Text = "DO 1";
+            this.DO1.UseStyleColors = true;
+            this.DO1.UseVisualStyleBackColor = false;
+            // 
+            // DO5
+            // 
+            this.DO5.AutoSize = true;
+            this.DO5.BackColor = System.Drawing.SystemColors.Control;
+            this.DO5.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.DO5.CustomBackground = true;
+            this.DO5.CustomForeColor = true;
+            this.DO5.FlatAppearance.BorderColor = System.Drawing.Color.Black;
+            this.DO5.FlatAppearance.CheckedBackColor = System.Drawing.Color.Lime;
+            this.DO5.ForeColor = System.Drawing.SystemColors.Highlight;
+            this.DO5.Location = new System.Drawing.Point(3, 118);
+            this.DO5.Name = "DO5";
+            this.DO5.Size = new System.Drawing.Size(54, 17);
+            this.DO5.Style = MetroFramework.MetroColorStyle.Green;
+            this.DO5.TabIndex = 31;
+            this.DO5.Text = "DO 5";
+            this.DO5.UseStyleColors = true;
+            this.DO5.UseVisualStyleBackColor = false;
+            // 
+            // DO2
+            // 
+            this.DO2.AutoSize = true;
+            this.DO2.BackColor = System.Drawing.SystemColors.Control;
+            this.DO2.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.DO2.CustomBackground = true;
+            this.DO2.CustomForeColor = true;
+            this.DO2.FlatAppearance.BorderColor = System.Drawing.Color.Black;
+            this.DO2.FlatAppearance.CheckedBackColor = System.Drawing.Color.Lime;
+            this.DO2.ForeColor = System.Drawing.SystemColors.Highlight;
+            this.DO2.Location = new System.Drawing.Point(3, 49);
+            this.DO2.Name = "DO2";
+            this.DO2.Size = new System.Drawing.Size(54, 17);
+            this.DO2.Style = MetroFramework.MetroColorStyle.Green;
+            this.DO2.TabIndex = 28;
+            this.DO2.Text = "DO 2";
+            this.DO2.UseStyleColors = true;
+            this.DO2.UseVisualStyleBackColor = false;
+            // 
+            // DO4
+            // 
+            this.DO4.AutoSize = true;
+            this.DO4.BackColor = System.Drawing.SystemColors.Control;
+            this.DO4.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.DO4.CustomBackground = true;
+            this.DO4.CustomForeColor = true;
+            this.DO4.FlatAppearance.BorderColor = System.Drawing.Color.Black;
+            this.DO4.FlatAppearance.CheckedBackColor = System.Drawing.Color.Lime;
+            this.DO4.ForeColor = System.Drawing.SystemColors.Highlight;
+            this.DO4.Location = new System.Drawing.Point(3, 95);
+            this.DO4.Name = "DO4";
+            this.DO4.Size = new System.Drawing.Size(54, 17);
+            this.DO4.Style = MetroFramework.MetroColorStyle.Green;
+            this.DO4.TabIndex = 30;
+            this.DO4.Text = "DO 4";
+            this.DO4.UseStyleColors = true;
+            this.DO4.UseVisualStyleBackColor = false;
+            // 
+            // DO3
+            // 
+            this.DO3.AutoSize = true;
+            this.DO3.BackColor = System.Drawing.SystemColors.Control;
+            this.DO3.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.DO3.CustomBackground = true;
+            this.DO3.CustomForeColor = true;
+            this.DO3.FlatAppearance.BorderColor = System.Drawing.Color.Black;
+            this.DO3.FlatAppearance.CheckedBackColor = System.Drawing.Color.Lime;
+            this.DO3.ForeColor = System.Drawing.SystemColors.Highlight;
+            this.DO3.Location = new System.Drawing.Point(3, 72);
+            this.DO3.Name = "DO3";
+            this.DO3.Size = new System.Drawing.Size(54, 17);
+            this.DO3.Style = MetroFramework.MetroColorStyle.Green;
+            this.DO3.TabIndex = 29;
+            this.DO3.Text = "DO 3";
+            this.DO3.UseStyleColors = true;
+            this.DO3.UseVisualStyleBackColor = false;
+            // 
+            // ServoDisconnect
+            // 
+            this.ServoDisconnect.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.ServoDisconnect.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.ServoDisconnect.Location = new System.Drawing.Point(138, 125);
+            this.ServoDisconnect.Margin = new System.Windows.Forms.Padding(4);
+            this.ServoDisconnect.Name = "ServoDisconnect";
+            this.ServoDisconnect.Size = new System.Drawing.Size(120, 31);
+            this.ServoDisconnect.TabIndex = 562;
+            this.ServoDisconnect.Text = "Disconnect";
+            this.ServoDisconnect.UseVisualStyleBackColor = true;
+            // 
+            // btn_ServoConnect
+            // 
+            this.btn_ServoConnect.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
+            this.btn_ServoConnect.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_ServoConnect.Location = new System.Drawing.Point(10, 125);
+            this.btn_ServoConnect.Margin = new System.Windows.Forms.Padding(4);
+            this.btn_ServoConnect.Name = "btn_ServoConnect";
+            this.btn_ServoConnect.Size = new System.Drawing.Size(120, 31);
+            this.btn_ServoConnect.TabIndex = 561;
+            this.btn_ServoConnect.Text = "Connect";
+            this.btn_ServoConnect.UseVisualStyleBackColor = true;
+            // 
+            // groupBox5
+            // 
+            this.groupBox5.Controls.Add(this.txt_ADAM6250_Port);
+            this.groupBox5.Controls.Add(this.txt_ADAM6250_IP);
+            this.groupBox5.Controls.Add(this.btn_RemoteIODisconnect);
+            this.groupBox5.Controls.Add(this.btn_RemoteIOConnect);
+            this.groupBox5.Location = new System.Drawing.Point(75, 46);
+            this.groupBox5.Margin = new System.Windows.Forms.Padding(4);
+            this.groupBox5.Name = "groupBox5";
+            this.groupBox5.Padding = new System.Windows.Forms.Padding(4);
+            this.groupBox5.Size = new System.Drawing.Size(270, 96);
+            this.groupBox5.TabIndex = 34;
+            this.groupBox5.TabStop = false;
+            this.groupBox5.Text = "Modbus TCP Communication";
+            // 
+            // txt_ADAM6250_Port
+            // 
+            this.txt_ADAM6250_Port.BackColor = System.Drawing.SystemColors.Control;
+            this.txt_ADAM6250_Port.Enabled = false;
+            this.txt_ADAM6250_Port.Location = new System.Drawing.Point(136, 27);
+            this.txt_ADAM6250_Port.Margin = new System.Windows.Forms.Padding(4);
+            this.txt_ADAM6250_Port.Name = "txt_ADAM6250_Port";
+            this.txt_ADAM6250_Port.Size = new System.Drawing.Size(120, 22);
+            this.txt_ADAM6250_Port.TabIndex = 9;
+            // 
+            // txt_ADAM6250_IP
+            // 
+            this.txt_ADAM6250_IP.BackColor = System.Drawing.SystemColors.Control;
+            this.txt_ADAM6250_IP.Enabled = false;
+            this.txt_ADAM6250_IP.Location = new System.Drawing.Point(8, 27);
+            this.txt_ADAM6250_IP.Margin = new System.Windows.Forms.Padding(4);
+            this.txt_ADAM6250_IP.Name = "txt_ADAM6250_IP";
+            this.txt_ADAM6250_IP.Size = new System.Drawing.Size(120, 22);
+            this.txt_ADAM6250_IP.TabIndex = 8;
+            // 
+            // btn_RemoteIODisconnect
+            // 
+            this.btn_RemoteIODisconnect.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.btn_RemoteIODisconnect.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_RemoteIODisconnect.Location = new System.Drawing.Point(136, 57);
+            this.btn_RemoteIODisconnect.Margin = new System.Windows.Forms.Padding(4);
+            this.btn_RemoteIODisconnect.Name = "btn_RemoteIODisconnect";
+            this.btn_RemoteIODisconnect.Size = new System.Drawing.Size(120, 31);
+            this.btn_RemoteIODisconnect.TabIndex = 4;
+            this.btn_RemoteIODisconnect.Text = "Disconnect";
+            this.btn_RemoteIODisconnect.UseVisualStyleBackColor = true;
+            this.btn_RemoteIODisconnect.Click += new System.EventHandler(this.btn_RemoteIODisconnect_Click);
+            // 
+            // btn_RemoteIOConnect
+            // 
+            this.btn_RemoteIOConnect.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
+            this.btn_RemoteIOConnect.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_RemoteIOConnect.Location = new System.Drawing.Point(8, 57);
+            this.btn_RemoteIOConnect.Margin = new System.Windows.Forms.Padding(4);
+            this.btn_RemoteIOConnect.Name = "btn_RemoteIOConnect";
+            this.btn_RemoteIOConnect.Size = new System.Drawing.Size(120, 31);
+            this.btn_RemoteIOConnect.TabIndex = 3;
+            this.btn_RemoteIOConnect.Text = "Connect";
+            this.btn_RemoteIOConnect.UseVisualStyleBackColor = true;
+            this.btn_RemoteIOConnect.Click += new System.EventHandler(this.btn_RemoteIOConnect_Click);
+            // 
+            // DI11
+            // 
+            this.DI11.AutoSize = true;
+            this.DI11.BackColor = System.Drawing.SystemColors.Control;
+            this.DI11.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.DI11.CustomBackground = true;
+            this.DI11.CustomForeColor = true;
+            this.DI11.Enabled = false;
+            this.DI11.FlatAppearance.BorderColor = System.Drawing.Color.Black;
+            this.DI11.FlatAppearance.CheckedBackColor = System.Drawing.Color.Lime;
+            this.DI11.ForeColor = System.Drawing.Color.Gray;
+            this.DI11.Location = new System.Drawing.Point(10, 258);
+            this.DI11.Name = "DI11";
+            this.DI11.Size = new System.Drawing.Size(54, 17);
+            this.DI11.Style = MetroFramework.MetroColorStyle.Green;
+            this.DI11.TabIndex = 30;
+            this.DI11.Text = "DI 11";
+            this.DI11.UseStyleColors = true;
+            this.DI11.UseVisualStyleBackColor = false;
+            // 
+            // DI10
+            // 
+            this.DI10.AutoSize = true;
+            this.DI10.BackColor = System.Drawing.SystemColors.Control;
+            this.DI10.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.DI10.CustomBackground = true;
+            this.DI10.CustomForeColor = true;
+            this.DI10.Enabled = false;
+            this.DI10.FlatAppearance.BorderColor = System.Drawing.Color.Black;
+            this.DI10.FlatAppearance.CheckedBackColor = System.Drawing.Color.Lime;
+            this.DI10.ForeColor = System.Drawing.Color.Gray;
+            this.DI10.Location = new System.Drawing.Point(10, 235);
+            this.DI10.Name = "DI10";
+            this.DI10.Size = new System.Drawing.Size(54, 17);
+            this.DI10.Style = MetroFramework.MetroColorStyle.Green;
+            this.DI10.TabIndex = 29;
+            this.DI10.Text = "DI 10";
+            this.DI10.UseStyleColors = true;
+            this.DI10.UseVisualStyleBackColor = false;
+            // 
+            // DI9
+            // 
+            this.DI9.AutoSize = true;
+            this.DI9.BackColor = System.Drawing.SystemColors.Control;
+            this.DI9.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.DI9.CustomBackground = true;
+            this.DI9.CustomForeColor = true;
+            this.DI9.Enabled = false;
+            this.DI9.FlatAppearance.BorderColor = System.Drawing.Color.Black;
+            this.DI9.FlatAppearance.CheckedBackColor = System.Drawing.Color.Lime;
+            this.DI9.ForeColor = System.Drawing.Color.Gray;
+            this.DI9.Location = new System.Drawing.Point(10, 212);
+            this.DI9.Name = "DI9";
+            this.DI9.Size = new System.Drawing.Size(47, 17);
+            this.DI9.Style = MetroFramework.MetroColorStyle.Green;
+            this.DI9.TabIndex = 28;
+            this.DI9.Text = "DI 9";
+            this.DI9.UseStyleColors = true;
+            this.DI9.UseVisualStyleBackColor = false;
+            // 
+            // DI8
+            // 
+            this.DI8.AutoSize = true;
+            this.DI8.BackColor = System.Drawing.SystemColors.Control;
+            this.DI8.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.DI8.CustomBackground = true;
+            this.DI8.CustomForeColor = true;
+            this.DI8.Enabled = false;
+            this.DI8.FlatAppearance.BorderColor = System.Drawing.Color.Black;
+            this.DI8.FlatAppearance.CheckedBackColor = System.Drawing.Color.Lime;
+            this.DI8.ForeColor = System.Drawing.Color.Gray;
+            this.DI8.Location = new System.Drawing.Point(10, 189);
+            this.DI8.Name = "DI8";
+            this.DI8.Size = new System.Drawing.Size(47, 17);
+            this.DI8.Style = MetroFramework.MetroColorStyle.Green;
+            this.DI8.TabIndex = 27;
+            this.DI8.Text = "DI 8";
+            this.DI8.UseStyleColors = true;
+            this.DI8.UseVisualStyleBackColor = false;
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(771, 725);
-            this.Controls.Add(this.tabControl2);
-            this.Controls.Add(this.groupBox4);
+            this.ClientSize = new System.Drawing.Size(492, 791);
             this.Controls.Add(this.tabControl1);
-            this.Controls.Add(this.cntr_Comm);
             this.Controls.Add(this.Footer);
             this.Controls.Add(this.Header);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
@@ -1603,6 +2182,7 @@
             this.groupBox2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.tbl_Limits)).EndInit();
             this.groupBox3.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.tbl_BuidZanasiCmd)).EndInit();
             this.tabControl1.ResumeLayout(false);
             this.tab_Zanasi4700.ResumeLayout(false);
             this.tab_ODBC.ResumeLayout(false);
@@ -1616,7 +2196,17 @@
             this.tabPage2.ResumeLayout(false);
             this.pnl_CMMO_Control.ResumeLayout(false);
             this.pnl_CMMO_Control.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.tbl_BuidZanasiCmd)).EndInit();
+            this.tab_RemoteIO.ResumeLayout(false);
+            this.tab_Servo.ResumeLayout(false);
+            this.tabControl3.ResumeLayout(false);
+            this.tabPage3.ResumeLayout(false);
+            this.tabPage3.PerformLayout();
+            this.tab4.ResumeLayout(false);
+            this.tab4.PerformLayout();
+            this.pnl_Outputs.ResumeLayout(false);
+            this.pnl_Outputs.PerformLayout();
+            this.groupBox5.ResumeLayout(false);
+            this.groupBox5.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -1731,6 +2321,38 @@
         private System.Windows.Forms.Button btn_BuildZanasiCmd;
         private System.Windows.Forms.Button btn_Clear;
         private System.Windows.Forms.RichTextBox txt_ReadData;
+        private System.Windows.Forms.TabPage tab_RemoteIO;
+        private System.Windows.Forms.TabPage tab_Servo;
+        private System.Windows.Forms.TabControl tabControl3;
+        private System.Windows.Forms.TabPage tabPage3;
+        private MetroFramework.Controls.MetroCheckBox DI7;
+        private MetroFramework.Controls.MetroCheckBox DI6;
+        private MetroFramework.Controls.MetroCheckBox DI5;
+        private MetroFramework.Controls.MetroCheckBox DI4;
+        private MetroFramework.Controls.MetroCheckBox DI3;
+        private MetroFramework.Controls.MetroCheckBox DI2;
+        private MetroFramework.Controls.MetroCheckBox DI1;
+        private MetroFramework.Controls.MetroCheckBox DI0;
+        private System.Windows.Forms.TabPage tab4;
+        private MetroFramework.Controls.MetroCheckBox btn_ForceOutputs;
+        private System.Windows.Forms.Panel pnl_Outputs;
+        private MetroFramework.Controls.MetroCheckBox DO0;
+        private MetroFramework.Controls.MetroCheckBox DO1;
+        private MetroFramework.Controls.MetroCheckBox DO5;
+        private MetroFramework.Controls.MetroCheckBox DO2;
+        private MetroFramework.Controls.MetroCheckBox DO4;
+        private MetroFramework.Controls.MetroCheckBox DO3;
+        private System.Windows.Forms.GroupBox groupBox5;
+        private System.Windows.Forms.TextBox txt_ADAM6250_Port;
+        private System.Windows.Forms.TextBox txt_ADAM6250_IP;
+        private System.Windows.Forms.Button btn_RemoteIODisconnect;
+        private System.Windows.Forms.Button btn_RemoteIOConnect;
+        private MetroFramework.Controls.MetroCheckBox DI11;
+        private MetroFramework.Controls.MetroCheckBox DI10;
+        private MetroFramework.Controls.MetroCheckBox DI9;
+        private MetroFramework.Controls.MetroCheckBox DI8;
+        private System.Windows.Forms.Button ServoDisconnect;
+        private System.Windows.Forms.Button btn_ServoConnect;
     }
 }
 
