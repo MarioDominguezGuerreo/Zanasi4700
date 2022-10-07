@@ -686,12 +686,12 @@ namespace Zanasi4700
 
                     //Send to Serial Port
                     serialPort1.Write(Line1_Command, 0, Line1_Command.Length);
-                    Thread.Sleep(500);
+                    Thread.Sleep(200);
                 }
                 txt_ReadData.AppendText("Trigger to Printer: Fixture [" + i + "]");
                 //ADAM-6050
                 _ADAM6250.Outputs[0] = true;
-                Thread.Sleep(500);
+                Thread.Sleep(200);
                 _ADAM6250.Outputs[0] = false;
 
                 txt_ReadData.AppendText("\n");
