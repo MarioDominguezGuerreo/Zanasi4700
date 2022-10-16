@@ -165,7 +165,7 @@ namespace Zanasi4700
                 {
                     //Settings of the Serial COM port
                     serialPort1.PortName = cbx_Ports.SelectedItem.ToString();
-                    serialPort1.BaudRate = 9600;                                    // 9600
+                    serialPort1.BaudRate = 19200;                                    // 9600
                     serialPort1.Parity = System.IO.Ports.Parity.None;               // None   
                     serialPort1.StopBits = System.IO.Ports.StopBits.One;            // 1
                     serialPort1.DataBits = 8;                                       // 8
@@ -682,10 +682,11 @@ namespace Zanasi4700
                     txt_ReadData.AppendText("Send info to Printer Line [" + k + "]");
                     txt_ReadData.AppendText("\n");
                     Line1_Command = SendInfoToPrinter(k);
+                    //Display Info to the table purpose
                     for (int j = 0; j < Line1_Command.Length; j++) { Package_cmd[i,k] += Line1_Command[j].ToString(); }
 
                     //Send to Serial Port
-                    serialPort1.Write(Line1_Command, 0, Line1_Command.Length);
+                    //serialPort1.Write(Line1_Command, 0, Line1_Command.Length);
                     Thread.Sleep(200);
                 }
                 txt_ReadData.AppendText("Trigger to Printer: Fixture [" + i + "]");
@@ -713,7 +714,7 @@ namespace Zanasi4700
             ODBCLimits[(int)eODBCLimits.Line3] = SerialNumber.Next().ToString();
             //Set and Wrap message to Zanasi Command
             Byte[] _ZanasiCMD = WrapMsgLine_To_ZanasiCommand(ODBCLimits[Line], Line);
-            //Send to Printer
+            //Convert to ASCII characteres
             char[]  Line1_Command = System.Text.Encoding.Default.GetChars(_ZanasiCMD);
 
             return Line1_Command;
@@ -757,7 +758,7 @@ namespace Zanasi4700
             }
             #endregion
 
-            return MsgWrapped;
+            return msgWrapped;
         }
         //Table to display the Zanasi Command
         void mZanasiCommand()
