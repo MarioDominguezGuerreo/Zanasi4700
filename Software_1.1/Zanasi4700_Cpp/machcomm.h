@@ -1,6 +1,4 @@
 
-
-
 /*ODBC Datasource x32Bits*/
 
 #define oDBC_Name			= "ZanasiDB"

@@ -23,7 +23,8 @@
 PrintComm::PrintComm()
 {
 	//Serial communication data
-	strcpy_s(RS232_Name, "COM7");
+	//NOTE: COM name must be 0-9. 
+	strcpy_s(RS232_Name, "COM1");
 	strcpy_s(RS232_Config, "baud=19200 parity=N data=8 stop=1");
 	//Initialize command
 	strcpy_s(ZanasiCMD_Connected, "Zanasi_Connected");
@@ -45,9 +46,9 @@ PrintComm::PrintComm()
 	Space		= 0x20;	// Space
 
 	//Customer ID
-	strcpy_s(mLine[eLine1].Command,"DOGMA MX");
+	strcpy_s(mLine[eLine1].Command,"CSE-SENSATA");
 	//Device ID	
-	strcpy_s(mLine[eLine2].Command,"209456TEW");
+	strcpy_s(mLine[eLine2].Command,"15102020TEW");
 }
 
 PrintComm::~PrintComm()
@@ -69,7 +70,6 @@ bool PrintComm::Connect()
 		printf("Printer Connected\n");
 		WriteComm(ZanasiCMD_Connected,sizeof(ZanasiCMD_Connected));
 	}
-		
 	else	
 		printf("Printer Connection Failed \n");
 
@@ -115,7 +115,7 @@ void PrintComm::BuildZanasiCommand()
 		   WriteComm(Line_Command,sizeof(Line_Command));
 		   printf("Write: %17.5s ->",Line_Command);
 		   //Wait 100 ms
-		   Sleep(200); 
+		   Sleep(1000); 
 		}
 		//Trigger to Print
 		printf("Trigger to Print\n");
@@ -124,9 +124,9 @@ void PrintComm::BuildZanasiCommand()
 // Send the information to the Printer
 void PrintComm::SendInfoToPrinter(int oLine)
 {
-	//Random Serial Number 100-201
+	//Random Serial Number 10000-20100
 	int random = 10000 + (rand() % 20100);
-	//Convert to String
+	//Convert to String Random serial number
 	itoa(random, mLine[eLine3].Command,10);
 	//Get the information from Lines 1,2,3 of the current fixture
 	WrapMsgLine_To_ZanasiCommand(mLine[oLine].Command ,oLine);
@@ -164,7 +164,7 @@ void PrintComm::WrapMsgLine_To_ZanasiCommand(const char* msg, int Line)
 	msgWrapped[eLineIndex]	= mLine; 
 	msgWrapped[eMsgIndex]	= MsgIndex; 
 	msgWrapped[eMsgSize]	= MsgSize; 
-	//Message Bytes (5-16)
+	//Message in Bytes (5-16)
 	for(int j=0; j<MsgMaxSize; j++)
 	{
 		msgWrapped[j+5] = byteMessage[j];
