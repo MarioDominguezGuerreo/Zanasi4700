@@ -119,11 +119,13 @@
     <ClCompile Include="HMI.CPP" />
     <ClCompile Include="PrintComm.cpp" />
     <ClCompile Include="SerialComm.cpp" />
+    <ClCompile Include="TCPIPComm.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="machcomm.h" />
     <ClInclude Include="PrintComm.h" />
     <ClInclude Include="SerialComm.h" />
+    <ClInclude Include="TCPIPComm.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

@@ -24,7 +24,7 @@ PrintComm::PrintComm()
 {
 	//Serial communication data
 	//NOTE: COM name must be 0-9. 
-	strcpy_s(RS232_Name, "COM1");
+	strcpy_s(RS232_Name, "COM2");
 	strcpy_s(RS232_Config, "baud=19200 parity=N data=8 stop=1");
 	//Initialize command
 	strcpy_s(ZanasiCMD_Connected, "Zanasi_Connected");
@@ -115,7 +115,7 @@ void PrintComm::BuildZanasiCommand()
 		   WriteComm(Line_Command,sizeof(Line_Command));
 		   printf("Write: %17.5s ->",Line_Command);
 		   //Wait 100 ms
-		   Sleep(1000); 
+		   Sleep(200); 
 		}
 		//Trigger to Print
 		printf("Trigger to Print\n");
@@ -131,10 +131,7 @@ void PrintComm::SendInfoToPrinter(int oLine)
 	//Get the information from Lines 1,2,3 of the current fixture
 	WrapMsgLine_To_ZanasiCommand(mLine[oLine].Command ,oLine);
 	//Convert to ASCII characteres
-	for(int i=0;i<sizeof(msgWrapped); i++)
-	{
-		Line_Command[i] = (char)msgWrapped[i];
-	}
+	for(int i=0;i<sizeof(msgWrapped); i++){Line_Command[i] = (char)msgWrapped[i];}
 }
 // Wrap the message to Zanasi Command
 void PrintComm::WrapMsgLine_To_ZanasiCommand(const char* msg, int Line)
@@ -154,10 +151,8 @@ void PrintComm::WrapMsgLine_To_ZanasiCommand(const char* msg, int Line)
 			mLine = LineIndex0;break;
 	}
 	//Conversion Char[] to Bytes[]
-	for(int i=0;i<MsgMaxSize; i++)
-	{
-		byteMessage[i] = (byte)msg[i];
-	}
+	for(int i=0;i<MsgMaxSize; i++) {byteMessage[i] = (byte)msg[i];}
+
 	//Control Bytes (0-4)
 	msgWrapped[eHead]		= Head;
 	msgWrapped[eSetQuery]	= SetQuery; 
@@ -165,10 +160,7 @@ void PrintComm::WrapMsgLine_To_ZanasiCommand(const char* msg, int Line)
 	msgWrapped[eMsgIndex]	= MsgIndex; 
 	msgWrapped[eMsgSize]	= MsgSize; 
 	//Message in Bytes (5-16)
-	for(int j=0; j<MsgMaxSize; j++)
-	{
-		msgWrapped[j+5] = byteMessage[j];
-	}
+	for(int j=0; j<MsgMaxSize; j++) {msgWrapped[j+5] = byteMessage[j];}
 }
 
 
