@@ -67,7 +67,7 @@ bool PrintComm::Connect()
 
 	if(bSucc) 
 	{
-		printf("Printer Connected\n");
+		printf("\nRS232-Connected\n");
 		WriteComm(ZanasiCMD_Connected,sizeof(ZanasiCMD_Connected));
 	}
 	else	
@@ -97,6 +97,7 @@ void PrintComm::Received()
 // Build Zanasi Command process
 void PrintComm::BuildZanasiCommand()
 {
+	bool bSucc = false;
 	//Clear
 	for(int j=0; j<MsgMaxSize; j++)
 	{
@@ -112,10 +113,10 @@ void PrintComm::BuildZanasiCommand()
 		   //Prepare the Zanasi Command
 		   SendInfoToPrinter(k);
 		   //Send Zanasi Command to Serial Port
-		   WriteComm(Line_Command,sizeof(Line_Command));
-		   printf("Write: %17.5s ->",Line_Command);
+		   bSucc = WriteComm(Line_Command,sizeof(Line_Command));
+		   if(bSucc) printf(" ->RS232 Printer: %17.5s",Line_Command);
 		   //Wait 100 ms
-		   Sleep(200); 
+		   Sleep(500);
 		}
 		//Trigger to Print
 		printf("Trigger to Print\n");

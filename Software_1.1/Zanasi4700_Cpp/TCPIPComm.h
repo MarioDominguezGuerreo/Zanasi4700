@@ -36,14 +36,12 @@ public:
 	bool Connect();
 	void Disconnect();
 	/*COMMUNICATION*/
-	void Send(const char* SCPI_cmd);
+	bool Send(const char* SCPI_cmd);
+	bool Send(int nFix, int nline);
+	bool Send();
 	void Recv();
-	void Commands(const char* Command);
 public:
 	bool TCPIPRunning;
-	/*SCPI Commands*/
-	struct SCPI_Msg {char Command[100];};
-	SCPI_Msg mSCPI[5];
 public:
 		/*Zanasi 4700: Structure Command*/
 
@@ -66,11 +64,16 @@ public:
 		BYTE msgWrapped[17];
 		BYTE byteMessage[12];
 		char Line_Command[17];
-		struct cmdLine { char Command[100];};
-		cmdLine mLine[3];
 
+		struct cmdFix
+		{ 
+			struct cmdLine {char Command[100];};
+			cmdLine mLine[3];
+		};
+		cmdFix mFix[12];
+		void ClearPackage();
 		void BuildZanasiCommand();
-		void SendInfoToPrinter(int Line);
+		void PrepareInfoToPrinter(int Fix, int Line);
 		void WrapMsgLine_To_ZanasiCommand(const char* msg, int Line);
 };
 unsigned __stdcall CTCPIPCommStart(void *vptr);
