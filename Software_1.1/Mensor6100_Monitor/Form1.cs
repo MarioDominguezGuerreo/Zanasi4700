@@ -108,10 +108,12 @@ namespace Zanasi4700
         DataTable tblLimits = new DataTable();
         DataTable tbBuildZanasiCmd = new DataTable();
 
+        //Zanasi 4700 Printer
+        Client_TcpIp CZanasi4700 = new Client_TcpIp();
         //FESTO Controller CMMO ST -LKP
         CMMO_ST_LKP OCMMO = new CMMO_ST_LKP();
         //ADAM-6250 Remote IO
-        ADAM6250 _ADAM6250 = new ADAM6250();
+        ADAM6250 CADAM6250 = new ADAM6250();
         #endregion
 
         public Form1()
@@ -127,8 +129,8 @@ namespace Zanasi4700
             //Build Zanasi Command
             mZanasiCommand();
             //ADAM-6250 IP
-            _ADAM6250.IP = "192.168.1.21";
-            _ADAM6250.Port = 502;
+            CADAM6250.IP = "192.168.1.21";
+            CADAM6250.Port = 502;
         }
 
         private void LocalClock_Tick(object sender, EventArgs e)
@@ -137,20 +139,11 @@ namespace Zanasi4700
             lb_Hora.Text = Tiempo.PCHora();
         }
 
-        #region Serial Communication: RS232
-        //Scan RS232 port available
-        private void Btn_Scan_Click(object sender, EventArgs e)
-        {
-            //Search a Serial COM port enable
-            cbx_Ports.Items.Clear();
-            foreach (String comports in System.IO.Ports.SerialPort.GetPortNames())
-            {
-                cbx_Ports.Items.Add(comports);
-            }
-        }
+        #region TCP/IP Communication
         //Connect
         private void Btn_Connect_Click(object sender, EventArgs e)
         {
+            /* RS232 Communication Disabled
             if (serialPort1.IsOpen == true)
             {
                 MessageBox.Show("The Serial " + serialPort1.PortName + " Port are being used");
@@ -183,10 +176,21 @@ namespace Zanasi4700
                     cntr_Cmd.Enabled = true;
                 }
             }
+            */
+
+            //TCP/IP Communication
+            if (CZanasi4700.Open_Communication())
+            {
+                txt_ReadData.AppendText("Connected to " + CZanasi4700.IP + "\n");
+                btn_Disconnect.Enabled = true;
+                btn_Connect.Enabled = false;
+                cntr_Cmd.Enabled = true;
+            }
         }
         //Disconnect
         private void Btn_Disconnect_Click(object sender, EventArgs e)
         {
+            /* RS232 Communication Disabled
             serialPort1.Close();
             txt_ReadData.SelectionColor = Mensaje.msgSystem();
             txt_ReadData.AppendText("Disconnected to " + serialPort1.PortName + "\n");
@@ -197,18 +201,32 @@ namespace Zanasi4700
             cbx_Ports.Enabled = true;
             cntr_Cmd.Enabled = false;
             btn_Scan.Enabled = true;
+            */
+
+            //TCP/IP Communication
+            if (CZanasi4700.Close_Communication())
+            { 
+                txt_ReadData.AppendText("Disconnected to " + CZanasi4700.IP + "\n");
+                btn_Disconnect.Enabled = false;
+                btn_Connect.Enabled = true;
+                cntr_Cmd.Enabled = false;
+            }
         }
         //Send
         private void Btn_SendData_Click(object sender, EventArgs e)
         {
+            /* RS232 Communication Disabled
             if (serialPort1.IsOpen)
             {
                 
             }
+            */
+
         }
         //Receive
         private void IntervalScan_Tick(object sender, EventArgs e)
         {
+            /* RS232 Communication Disabled
             if (serialPort1.IsOpen)
             {
                 LeerDatos = serialPort1.ReadExisting();
@@ -220,6 +238,7 @@ namespace Zanasi4700
                     txt_ReadData.AppendText(LeerDatos+"\n");
                 }
             }
+            */
         }
         #endregion
 
@@ -234,6 +253,11 @@ namespace Zanasi4700
             txt_ExtData_Index1_Size.Text = txt_ExtData_Index1.TextLength.ToString();
             //Line 1: Index 2
             txt_ExtData_Index2_Size.Text = txt_ExtData_Index2.TextLength.ToString();
+
+            #region Zanasi 4700
+            txt_Zanasi4700_IP.Text = CZanasi4700.IP;
+            txt_Zanasi4700_Port.Text = CZanasi4700.Port.ToString();
+            #endregion
 
             #region Servo Press: Festo Controller CMMO ST LKP
 
@@ -357,18 +381,18 @@ namespace Zanasi4700
 
             #region ADAM-6250 IO scan
             //Inputs
-            DI0.Checked = _ADAM6250.Inputs[0];
-            DI1.Checked = _ADAM6250.Inputs[1];
-            DI2.Checked = _ADAM6250.Inputs[2];
-            DI3.Checked = _ADAM6250.Inputs[3];
-            DI4.Checked = _ADAM6250.Inputs[4];
-            DI5.Checked = _ADAM6250.Inputs[5];
-            DI6.Checked = _ADAM6250.Inputs[6];
-            DI7.Checked = _ADAM6250.Inputs[7];
-            DI8.Checked = _ADAM6250.Inputs[8];
-            DI9.Checked = _ADAM6250.Inputs[9];
-            DI10.Checked = _ADAM6250.Inputs[10];
-            DI11.Checked = _ADAM6250.Inputs[11];
+            DI0.Checked = CADAM6250.Inputs[0];
+            DI1.Checked = CADAM6250.Inputs[1];
+            DI2.Checked = CADAM6250.Inputs[2];
+            DI3.Checked = CADAM6250.Inputs[3];
+            DI4.Checked = CADAM6250.Inputs[4];
+            DI5.Checked = CADAM6250.Inputs[5];
+            DI6.Checked = CADAM6250.Inputs[6];
+            DI7.Checked = CADAM6250.Inputs[7];
+            DI8.Checked = CADAM6250.Inputs[8];
+            DI9.Checked = CADAM6250.Inputs[9];
+            DI10.Checked = CADAM6250.Inputs[10];
+            DI11.Checked = CADAM6250.Inputs[11];
 
             //Outputs: Manual mode the outputs can be forced
 
@@ -376,27 +400,27 @@ namespace Zanasi4700
             {
                 //Write Permission
                 pnl_Outputs.Enabled = true;
-                _ADAM6250.Parameters[1] = false;
+                CADAM6250.Parameters[1] = false;
 
-                _ADAM6250.Outputs[0] = DO0.Checked;
-                _ADAM6250.Outputs[1] = DO1.Checked;
-                _ADAM6250.Outputs[2] = DO2.Checked;
-                _ADAM6250.Outputs[3] = DO3.Checked;
-                _ADAM6250.Outputs[4] = DO4.Checked;
-                _ADAM6250.Outputs[5] = DO5.Checked;
+                CADAM6250.Outputs[0] = DO0.Checked;
+                CADAM6250.Outputs[1] = DO1.Checked;
+                CADAM6250.Outputs[2] = DO2.Checked;
+                CADAM6250.Outputs[3] = DO3.Checked;
+                CADAM6250.Outputs[4] = DO4.Checked;
+                CADAM6250.Outputs[5] = DO5.Checked;
             }
             else
             {
                 //Write Permission
                 pnl_Outputs.Enabled = false;
-                _ADAM6250.Parameters[1] = false;
+                CADAM6250.Parameters[1] = false;
 
-                DO0.Checked = _ADAM6250.Outputs[0];
-                DO1.Checked = _ADAM6250.Outputs[1];
-                DO2.Checked = _ADAM6250.Outputs[2];
-                DO3.Checked = _ADAM6250.Outputs[3];
-                DO4.Checked = _ADAM6250.Outputs[4];
-                DO5.Checked = _ADAM6250.Outputs[5];
+                DO0.Checked = CADAM6250.Outputs[0];
+                DO1.Checked = CADAM6250.Outputs[1];
+                DO2.Checked = CADAM6250.Outputs[2];
+                DO3.Checked = CADAM6250.Outputs[3];
+                DO4.Checked = CADAM6250.Outputs[4];
+                DO5.Checked = CADAM6250.Outputs[5];
             }
             #endregion
         }
@@ -643,22 +667,22 @@ namespace Zanasi4700
             ExtData_Index0();
             Thread.Sleep(500);
             //ADAM-6050
-            _ADAM6250.Outputs[0] = true;
+            CADAM6250.Outputs[0] = true;
             Thread.Sleep(500);
-            _ADAM6250.Outputs[0] = false;
+            CADAM6250.Outputs[0] = false;
             //Send to Serial Port
             ExtData_Index1();
             Thread.Sleep(500);
             //ADAM-6050
-            _ADAM6250.Outputs[0] = true;
+            CADAM6250.Outputs[0] = true;
             Thread.Sleep(500);
-            _ADAM6250.Outputs[0] = false;
+            CADAM6250.Outputs[0] = false;
             //Send to Serial Port
             ExtData_Index2();
             //ADAM-6050
-            _ADAM6250.Outputs[0] = true;
+            CADAM6250.Outputs[0] = true;
             Thread.Sleep(500);
-            _ADAM6250.Outputs[0] = false;
+            CADAM6250.Outputs[0] = false;
         }
         //Manual Mode: Build Zanasi Command
         private void btn_BuildZanasiCmd_Click(object sender, EventArgs e)
@@ -685,15 +709,19 @@ namespace Zanasi4700
                     //Display Info to the table purpose
                     for (int j = 0; j < Line1_Command.Length; j++) { Package_cmd[i,k] += Line1_Command[j].ToString(); }
 
-                    //Send to Serial Port
-                    serialPort1.Write(Line1_Command, 0, Line1_Command.Length);
+                    /* RS232 Disabled
+                    //Send to Serial Port, 
+                    //serialPort1.Write(Line1_Command, 0, Line1_Command.Length);
                     Thread.Sleep(200);
+                    */
+
+                    CZanasi4700.SendCommand(i+","+k+","+Package_cmd[i,k]);
                 }
                 txt_ReadData.AppendText("Trigger to Printer: Fixture [" + i + "]");
                 //ADAM-6050
-                _ADAM6250.Outputs[0] = true;
-                Thread.Sleep(200);
-                _ADAM6250.Outputs[0] = false;
+                CADAM6250.Outputs[0] = true;
+                Thread.Sleep(100);
+                CADAM6250.Outputs[0] = false;
 
                 txt_ReadData.AppendText("\n");
                 //Add limits to Table
@@ -716,6 +744,13 @@ namespace Zanasi4700
             Byte[] _ZanasiCMD = WrapMsgLine_To_ZanasiCommand(ODBCLimits[Line], Line);
             //Convert to ASCII characteres
             char[]  Line1_Command = System.Text.Encoding.Default.GetChars(_ZanasiCMD);
+
+            string LineCommand_Str = "";
+            for (int i = 0; i < _ZanasiCMD.Length; i++)
+            {
+                LineCommand_Str += _ZanasiCMD[i].ToString("X") + " ";
+            }
+            txt_ReadData.AppendText(LineCommand_Str);
 
             return Line1_Command;
         }
@@ -948,13 +983,13 @@ namespace Zanasi4700
         #region Remote IO: ADAM-6050
         void ADAM6050_Connect()
         {
-            if (_ADAM6250.Open_Communication())
+            if (CADAM6250.Open_Communication())
             {
                 txt_ReadData.AppendText("Remote IO Connected\n");
                 btn_Connect.Enabled = false;
                 btn_Disconnect.Enabled = true;
-                txt_ADAM6250_IP.Text = _ADAM6250.IP;
-                txt_ADAM6250_Port.Text = _ADAM6250.Port.ToString();
+                txt_ADAM6250_IP.Text = CADAM6250.IP;
+                txt_ADAM6250_Port.Text = CADAM6250.Port.ToString();
             }
             else
             {
@@ -964,7 +999,7 @@ namespace Zanasi4700
 
         void ADAM6050_Disconnect()
         {
-            if (_ADAM6250.Close_Communication())
+            if (CADAM6250.Close_Communication())
             {
                 txt_ReadData.AppendText("Remote IO Disconnected\n");
                 btn_Connect.Enabled = true;

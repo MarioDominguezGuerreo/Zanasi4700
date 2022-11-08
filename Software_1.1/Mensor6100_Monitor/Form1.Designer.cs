@@ -38,9 +38,7 @@
             this.lb_Hora = new System.Windows.Forms.ToolStripStatusLabel();
             this.lb_Fecha = new System.Windows.Forms.ToolStripStatusLabel();
             this.LocalClock = new System.Windows.Forms.Timer(this.components);
-            this.btn_Scan = new System.Windows.Forms.Button();
             this.cntr_Comm = new System.Windows.Forms.GroupBox();
-            this.cbx_Ports = new System.Windows.Forms.ComboBox();
             this.btn_Disconnect = new System.Windows.Forms.Button();
             this.btn_Connect = new System.Windows.Forms.Button();
             this.cntr_Cmd = new System.Windows.Forms.GroupBox();
@@ -82,21 +80,42 @@
             this.btn_Clear = new System.Windows.Forms.Button();
             this.txt_ReadData = new System.Windows.Forms.RichTextBox();
             this.tab_ODBC = new System.Windows.Forms.TabPage();
-            this.groupBox4 = new System.Windows.Forms.GroupBox();
+            this.tab_RemoteIO = new System.Windows.Forms.TabPage();
+            this.groupBox5 = new System.Windows.Forms.GroupBox();
+            this.txt_ADAM6250_Port = new System.Windows.Forms.TextBox();
+            this.txt_ADAM6250_IP = new System.Windows.Forms.TextBox();
+            this.btn_RemoteIODisconnect = new System.Windows.Forms.Button();
+            this.btn_RemoteIOConnect = new System.Windows.Forms.Button();
+            this.tabControl3 = new System.Windows.Forms.TabControl();
+            this.tabPage3 = new System.Windows.Forms.TabPage();
+            this.DI11 = new MetroFramework.Controls.MetroCheckBox();
+            this.DI10 = new MetroFramework.Controls.MetroCheckBox();
+            this.DI9 = new MetroFramework.Controls.MetroCheckBox();
+            this.DI8 = new MetroFramework.Controls.MetroCheckBox();
+            this.DI7 = new MetroFramework.Controls.MetroCheckBox();
+            this.DI6 = new MetroFramework.Controls.MetroCheckBox();
+            this.DI5 = new MetroFramework.Controls.MetroCheckBox();
+            this.DI4 = new MetroFramework.Controls.MetroCheckBox();
+            this.DI3 = new MetroFramework.Controls.MetroCheckBox();
+            this.DI2 = new MetroFramework.Controls.MetroCheckBox();
+            this.DI1 = new MetroFramework.Controls.MetroCheckBox();
+            this.DI0 = new MetroFramework.Controls.MetroCheckBox();
+            this.tab4 = new System.Windows.Forms.TabPage();
+            this.btn_ForceOutputs = new MetroFramework.Controls.MetroCheckBox();
+            this.pnl_Outputs = new System.Windows.Forms.Panel();
+            this.DO0 = new MetroFramework.Controls.MetroCheckBox();
+            this.DO1 = new MetroFramework.Controls.MetroCheckBox();
+            this.DO5 = new MetroFramework.Controls.MetroCheckBox();
+            this.DO2 = new MetroFramework.Controls.MetroCheckBox();
+            this.DO4 = new MetroFramework.Controls.MetroCheckBox();
+            this.DO3 = new MetroFramework.Controls.MetroCheckBox();
+            this.tab_Servo = new System.Windows.Forms.TabPage();
             this.pnl_ServoControl = new System.Windows.Forms.GroupBox();
             this.btn_CMMO_SelectRecord_5 = new System.Windows.Forms.RadioButton();
             this.btn_CMMO_SelectRecord_1 = new System.Windows.Forms.RadioButton();
             this.btn_CMMO_SelectRecord_2 = new System.Windows.Forms.RadioButton();
             this.btn_CMMO_Start = new System.Windows.Forms.CheckBox();
             this.btn_CMMO_Stop = new System.Windows.Forms.CheckBox();
-            this.label96 = new System.Windows.Forms.Label();
-            this.label95 = new System.Windows.Forms.Label();
-            this.txt_CMMO_RecSelected = new System.Windows.Forms.Label();
-            this.label103 = new System.Windows.Forms.Label();
-            this.txt_CMMO_Position = new System.Windows.Forms.Label();
-            this.txt_CMMOConnStatus = new System.Windows.Forms.Label();
-            this.label67 = new System.Windows.Forms.Label();
-            this.btn_CMMO_Remote = new MetroFramework.Controls.MetroToggle();
             this.tabControl2 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.label91 = new System.Windows.Forms.Label();
@@ -137,38 +156,21 @@
             this.cbx_Reg1Bit12 = new MetroFramework.Controls.MetroCheckBox();
             this.cbx_Reg1Bit13 = new MetroFramework.Controls.MetroCheckBox();
             this.cbx_Reg1Bit4 = new MetroFramework.Controls.MetroCheckBox();
-            this.tab_RemoteIO = new System.Windows.Forms.TabPage();
-            this.tab_Servo = new System.Windows.Forms.TabPage();
-            this.tabControl3 = new System.Windows.Forms.TabControl();
-            this.tabPage3 = new System.Windows.Forms.TabPage();
-            this.DI7 = new MetroFramework.Controls.MetroCheckBox();
-            this.DI6 = new MetroFramework.Controls.MetroCheckBox();
-            this.DI5 = new MetroFramework.Controls.MetroCheckBox();
-            this.DI4 = new MetroFramework.Controls.MetroCheckBox();
-            this.DI3 = new MetroFramework.Controls.MetroCheckBox();
-            this.DI2 = new MetroFramework.Controls.MetroCheckBox();
-            this.DI1 = new MetroFramework.Controls.MetroCheckBox();
-            this.DI0 = new MetroFramework.Controls.MetroCheckBox();
-            this.tab4 = new System.Windows.Forms.TabPage();
-            this.btn_ForceOutputs = new MetroFramework.Controls.MetroCheckBox();
-            this.pnl_Outputs = new System.Windows.Forms.Panel();
-            this.DO0 = new MetroFramework.Controls.MetroCheckBox();
-            this.DO1 = new MetroFramework.Controls.MetroCheckBox();
-            this.DO5 = new MetroFramework.Controls.MetroCheckBox();
-            this.DO2 = new MetroFramework.Controls.MetroCheckBox();
-            this.DO4 = new MetroFramework.Controls.MetroCheckBox();
-            this.DO3 = new MetroFramework.Controls.MetroCheckBox();
+            this.groupBox4 = new System.Windows.Forms.GroupBox();
             this.ServoDisconnect = new System.Windows.Forms.Button();
             this.btn_ServoConnect = new System.Windows.Forms.Button();
-            this.groupBox5 = new System.Windows.Forms.GroupBox();
-            this.txt_ADAM6250_Port = new System.Windows.Forms.TextBox();
-            this.txt_ADAM6250_IP = new System.Windows.Forms.TextBox();
-            this.btn_RemoteIODisconnect = new System.Windows.Forms.Button();
-            this.btn_RemoteIOConnect = new System.Windows.Forms.Button();
-            this.DI11 = new MetroFramework.Controls.MetroCheckBox();
-            this.DI10 = new MetroFramework.Controls.MetroCheckBox();
-            this.DI9 = new MetroFramework.Controls.MetroCheckBox();
-            this.DI8 = new MetroFramework.Controls.MetroCheckBox();
+            this.label96 = new System.Windows.Forms.Label();
+            this.label95 = new System.Windows.Forms.Label();
+            this.txt_CMMO_RecSelected = new System.Windows.Forms.Label();
+            this.label103 = new System.Windows.Forms.Label();
+            this.txt_CMMO_Position = new System.Windows.Forms.Label();
+            this.txt_CMMOConnStatus = new System.Windows.Forms.Label();
+            this.label67 = new System.Windows.Forms.Label();
+            this.btn_CMMO_Remote = new MetroFramework.Controls.MetroToggle();
+            this.label8 = new System.Windows.Forms.Label();
+            this.label9 = new System.Windows.Forms.Label();
+            this.txt_Zanasi4700_Port = new System.Windows.Forms.Label();
+            this.txt_Zanasi4700_IP = new System.Windows.Forms.Label();
             this.Header.SuspendLayout();
             this.Footer.SuspendLayout();
             this.cntr_Comm.SuspendLayout();
@@ -182,19 +184,19 @@
             this.tabControl1.SuspendLayout();
             this.tab_Zanasi4700.SuspendLayout();
             this.tab_ODBC.SuspendLayout();
-            this.groupBox4.SuspendLayout();
+            this.tab_RemoteIO.SuspendLayout();
+            this.groupBox5.SuspendLayout();
+            this.tabControl3.SuspendLayout();
+            this.tabPage3.SuspendLayout();
+            this.tab4.SuspendLayout();
+            this.pnl_Outputs.SuspendLayout();
+            this.tab_Servo.SuspendLayout();
             this.pnl_ServoControl.SuspendLayout();
             this.tabControl2.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.tabPage2.SuspendLayout();
             this.pnl_CMMO_Control.SuspendLayout();
-            this.tab_RemoteIO.SuspendLayout();
-            this.tab_Servo.SuspendLayout();
-            this.tabControl3.SuspendLayout();
-            this.tabPage3.SuspendLayout();
-            this.tab4.SuspendLayout();
-            this.pnl_Outputs.SuspendLayout();
-            this.groupBox5.SuspendLayout();
+            this.groupBox4.SuspendLayout();
             this.SuspendLayout();
             // 
             // Header
@@ -263,23 +265,14 @@
             this.LocalClock.Interval = 1000;
             this.LocalClock.Tick += new System.EventHandler(this.LocalClock_Tick);
             // 
-            // btn_Scan
-            // 
-            this.btn_Scan.Location = new System.Drawing.Point(22, 27);
-            this.btn_Scan.Margin = new System.Windows.Forms.Padding(4);
-            this.btn_Scan.Name = "btn_Scan";
-            this.btn_Scan.Size = new System.Drawing.Size(120, 31);
-            this.btn_Scan.TabIndex = 2;
-            this.btn_Scan.Text = "<1> COM Port";
-            this.btn_Scan.UseVisualStyleBackColor = true;
-            this.btn_Scan.Click += new System.EventHandler(this.Btn_Scan_Click);
-            // 
             // cntr_Comm
             // 
-            this.cntr_Comm.Controls.Add(this.cbx_Ports);
+            this.cntr_Comm.Controls.Add(this.txt_Zanasi4700_IP);
+            this.cntr_Comm.Controls.Add(this.txt_Zanasi4700_Port);
+            this.cntr_Comm.Controls.Add(this.label9);
+            this.cntr_Comm.Controls.Add(this.label8);
             this.cntr_Comm.Controls.Add(this.btn_Disconnect);
             this.cntr_Comm.Controls.Add(this.btn_Connect);
-            this.cntr_Comm.Controls.Add(this.btn_Scan);
             this.cntr_Comm.Location = new System.Drawing.Point(7, 23);
             this.cntr_Comm.Margin = new System.Windows.Forms.Padding(4);
             this.cntr_Comm.Name = "cntr_Comm";
@@ -287,16 +280,7 @@
             this.cntr_Comm.Size = new System.Drawing.Size(448, 110);
             this.cntr_Comm.TabIndex = 3;
             this.cntr_Comm.TabStop = false;
-            this.cntr_Comm.Text = "Serial Communication | RS232";
-            // 
-            // cbx_Ports
-            // 
-            this.cbx_Ports.FormattingEnabled = true;
-            this.cbx_Ports.Location = new System.Drawing.Point(150, 31);
-            this.cbx_Ports.Margin = new System.Windows.Forms.Padding(4);
-            this.cbx_Ports.Name = "cbx_Ports";
-            this.cbx_Ports.Size = new System.Drawing.Size(120, 24);
-            this.cbx_Ports.TabIndex = 5;
+            this.cntr_Comm.Text = "Ethernet Communication | TCP/IP";
             // 
             // btn_Disconnect
             // 
@@ -752,24 +736,519 @@
             this.tab_ODBC.TabIndex = 1;
             this.tab_ODBC.Text = "ODBC Database";
             // 
-            // groupBox4
+            // tab_RemoteIO
             // 
-            this.groupBox4.Controls.Add(this.ServoDisconnect);
-            this.groupBox4.Controls.Add(this.btn_ServoConnect);
-            this.groupBox4.Controls.Add(this.label96);
-            this.groupBox4.Controls.Add(this.label95);
-            this.groupBox4.Controls.Add(this.txt_CMMO_RecSelected);
-            this.groupBox4.Controls.Add(this.label103);
-            this.groupBox4.Controls.Add(this.txt_CMMO_Position);
-            this.groupBox4.Controls.Add(this.txt_CMMOConnStatus);
-            this.groupBox4.Controls.Add(this.label67);
-            this.groupBox4.Controls.Add(this.btn_CMMO_Remote);
-            this.groupBox4.Location = new System.Drawing.Point(95, 27);
-            this.groupBox4.Name = "groupBox4";
-            this.groupBox4.Size = new System.Drawing.Size(271, 167);
-            this.groupBox4.TabIndex = 36;
-            this.groupBox4.TabStop = false;
-            this.groupBox4.Text = "FESTO Servo motor";
+            this.tab_RemoteIO.BackColor = System.Drawing.SystemColors.Control;
+            this.tab_RemoteIO.Controls.Add(this.groupBox5);
+            this.tab_RemoteIO.Controls.Add(this.tabControl3);
+            this.tab_RemoteIO.Location = new System.Drawing.Point(4, 25);
+            this.tab_RemoteIO.Name = "tab_RemoteIO";
+            this.tab_RemoteIO.Size = new System.Drawing.Size(464, 688);
+            this.tab_RemoteIO.TabIndex = 2;
+            this.tab_RemoteIO.Text = "RemoteIO";
+            // 
+            // groupBox5
+            // 
+            this.groupBox5.Controls.Add(this.txt_ADAM6250_Port);
+            this.groupBox5.Controls.Add(this.txt_ADAM6250_IP);
+            this.groupBox5.Controls.Add(this.btn_RemoteIODisconnect);
+            this.groupBox5.Controls.Add(this.btn_RemoteIOConnect);
+            this.groupBox5.Location = new System.Drawing.Point(75, 46);
+            this.groupBox5.Margin = new System.Windows.Forms.Padding(4);
+            this.groupBox5.Name = "groupBox5";
+            this.groupBox5.Padding = new System.Windows.Forms.Padding(4);
+            this.groupBox5.Size = new System.Drawing.Size(270, 96);
+            this.groupBox5.TabIndex = 34;
+            this.groupBox5.TabStop = false;
+            this.groupBox5.Text = "Modbus TCP Communication";
+            // 
+            // txt_ADAM6250_Port
+            // 
+            this.txt_ADAM6250_Port.BackColor = System.Drawing.SystemColors.Control;
+            this.txt_ADAM6250_Port.Enabled = false;
+            this.txt_ADAM6250_Port.Location = new System.Drawing.Point(136, 27);
+            this.txt_ADAM6250_Port.Margin = new System.Windows.Forms.Padding(4);
+            this.txt_ADAM6250_Port.Name = "txt_ADAM6250_Port";
+            this.txt_ADAM6250_Port.Size = new System.Drawing.Size(120, 22);
+            this.txt_ADAM6250_Port.TabIndex = 9;
+            // 
+            // txt_ADAM6250_IP
+            // 
+            this.txt_ADAM6250_IP.BackColor = System.Drawing.SystemColors.Control;
+            this.txt_ADAM6250_IP.Enabled = false;
+            this.txt_ADAM6250_IP.Location = new System.Drawing.Point(8, 27);
+            this.txt_ADAM6250_IP.Margin = new System.Windows.Forms.Padding(4);
+            this.txt_ADAM6250_IP.Name = "txt_ADAM6250_IP";
+            this.txt_ADAM6250_IP.Size = new System.Drawing.Size(120, 22);
+            this.txt_ADAM6250_IP.TabIndex = 8;
+            // 
+            // btn_RemoteIODisconnect
+            // 
+            this.btn_RemoteIODisconnect.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.btn_RemoteIODisconnect.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_RemoteIODisconnect.Location = new System.Drawing.Point(136, 57);
+            this.btn_RemoteIODisconnect.Margin = new System.Windows.Forms.Padding(4);
+            this.btn_RemoteIODisconnect.Name = "btn_RemoteIODisconnect";
+            this.btn_RemoteIODisconnect.Size = new System.Drawing.Size(120, 31);
+            this.btn_RemoteIODisconnect.TabIndex = 4;
+            this.btn_RemoteIODisconnect.Text = "Disconnect";
+            this.btn_RemoteIODisconnect.UseVisualStyleBackColor = true;
+            this.btn_RemoteIODisconnect.Click += new System.EventHandler(this.btn_RemoteIODisconnect_Click);
+            // 
+            // btn_RemoteIOConnect
+            // 
+            this.btn_RemoteIOConnect.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
+            this.btn_RemoteIOConnect.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_RemoteIOConnect.Location = new System.Drawing.Point(8, 57);
+            this.btn_RemoteIOConnect.Margin = new System.Windows.Forms.Padding(4);
+            this.btn_RemoteIOConnect.Name = "btn_RemoteIOConnect";
+            this.btn_RemoteIOConnect.Size = new System.Drawing.Size(120, 31);
+            this.btn_RemoteIOConnect.TabIndex = 3;
+            this.btn_RemoteIOConnect.Text = "Connect";
+            this.btn_RemoteIOConnect.UseVisualStyleBackColor = true;
+            this.btn_RemoteIOConnect.Click += new System.EventHandler(this.btn_RemoteIOConnect_Click);
+            // 
+            // tabControl3
+            // 
+            this.tabControl3.Controls.Add(this.tabPage3);
+            this.tabControl3.Controls.Add(this.tab4);
+            this.tabControl3.Location = new System.Drawing.Point(75, 235);
+            this.tabControl3.Name = "tabControl3";
+            this.tabControl3.SelectedIndex = 0;
+            this.tabControl3.Size = new System.Drawing.Size(270, 330);
+            this.tabControl3.TabIndex = 33;
+            // 
+            // tabPage3
+            // 
+            this.tabPage3.BackColor = System.Drawing.SystemColors.Control;
+            this.tabPage3.Controls.Add(this.DI11);
+            this.tabPage3.Controls.Add(this.DI10);
+            this.tabPage3.Controls.Add(this.DI9);
+            this.tabPage3.Controls.Add(this.DI8);
+            this.tabPage3.Controls.Add(this.DI7);
+            this.tabPage3.Controls.Add(this.DI6);
+            this.tabPage3.Controls.Add(this.DI5);
+            this.tabPage3.Controls.Add(this.DI4);
+            this.tabPage3.Controls.Add(this.DI3);
+            this.tabPage3.Controls.Add(this.DI2);
+            this.tabPage3.Controls.Add(this.DI1);
+            this.tabPage3.Controls.Add(this.DI0);
+            this.tabPage3.Location = new System.Drawing.Point(4, 25);
+            this.tabPage3.Name = "tabPage3";
+            this.tabPage3.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage3.Size = new System.Drawing.Size(262, 301);
+            this.tabPage3.TabIndex = 0;
+            this.tabPage3.Text = "Inputs";
+            // 
+            // DI11
+            // 
+            this.DI11.AutoSize = true;
+            this.DI11.BackColor = System.Drawing.SystemColors.Control;
+            this.DI11.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.DI11.CustomBackground = true;
+            this.DI11.CustomForeColor = true;
+            this.DI11.Enabled = false;
+            this.DI11.FlatAppearance.BorderColor = System.Drawing.Color.Black;
+            this.DI11.FlatAppearance.CheckedBackColor = System.Drawing.Color.Lime;
+            this.DI11.ForeColor = System.Drawing.Color.Gray;
+            this.DI11.Location = new System.Drawing.Point(10, 258);
+            this.DI11.Name = "DI11";
+            this.DI11.Size = new System.Drawing.Size(54, 17);
+            this.DI11.Style = MetroFramework.MetroColorStyle.Green;
+            this.DI11.TabIndex = 30;
+            this.DI11.Text = "DI 11";
+            this.DI11.UseStyleColors = true;
+            this.DI11.UseVisualStyleBackColor = false;
+            // 
+            // DI10
+            // 
+            this.DI10.AutoSize = true;
+            this.DI10.BackColor = System.Drawing.SystemColors.Control;
+            this.DI10.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.DI10.CustomBackground = true;
+            this.DI10.CustomForeColor = true;
+            this.DI10.Enabled = false;
+            this.DI10.FlatAppearance.BorderColor = System.Drawing.Color.Black;
+            this.DI10.FlatAppearance.CheckedBackColor = System.Drawing.Color.Lime;
+            this.DI10.ForeColor = System.Drawing.Color.Gray;
+            this.DI10.Location = new System.Drawing.Point(10, 235);
+            this.DI10.Name = "DI10";
+            this.DI10.Size = new System.Drawing.Size(54, 17);
+            this.DI10.Style = MetroFramework.MetroColorStyle.Green;
+            this.DI10.TabIndex = 29;
+            this.DI10.Text = "DI 10";
+            this.DI10.UseStyleColors = true;
+            this.DI10.UseVisualStyleBackColor = false;
+            // 
+            // DI9
+            // 
+            this.DI9.AutoSize = true;
+            this.DI9.BackColor = System.Drawing.SystemColors.Control;
+            this.DI9.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.DI9.CustomBackground = true;
+            this.DI9.CustomForeColor = true;
+            this.DI9.Enabled = false;
+            this.DI9.FlatAppearance.BorderColor = System.Drawing.Color.Black;
+            this.DI9.FlatAppearance.CheckedBackColor = System.Drawing.Color.Lime;
+            this.DI9.ForeColor = System.Drawing.Color.Gray;
+            this.DI9.Location = new System.Drawing.Point(10, 212);
+            this.DI9.Name = "DI9";
+            this.DI9.Size = new System.Drawing.Size(47, 17);
+            this.DI9.Style = MetroFramework.MetroColorStyle.Green;
+            this.DI9.TabIndex = 28;
+            this.DI9.Text = "DI 9";
+            this.DI9.UseStyleColors = true;
+            this.DI9.UseVisualStyleBackColor = false;
+            // 
+            // DI8
+            // 
+            this.DI8.AutoSize = true;
+            this.DI8.BackColor = System.Drawing.SystemColors.Control;
+            this.DI8.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.DI8.CustomBackground = true;
+            this.DI8.CustomForeColor = true;
+            this.DI8.Enabled = false;
+            this.DI8.FlatAppearance.BorderColor = System.Drawing.Color.Black;
+            this.DI8.FlatAppearance.CheckedBackColor = System.Drawing.Color.Lime;
+            this.DI8.ForeColor = System.Drawing.Color.Gray;
+            this.DI8.Location = new System.Drawing.Point(10, 189);
+            this.DI8.Name = "DI8";
+            this.DI8.Size = new System.Drawing.Size(47, 17);
+            this.DI8.Style = MetroFramework.MetroColorStyle.Green;
+            this.DI8.TabIndex = 27;
+            this.DI8.Text = "DI 8";
+            this.DI8.UseStyleColors = true;
+            this.DI8.UseVisualStyleBackColor = false;
+            // 
+            // DI7
+            // 
+            this.DI7.AutoSize = true;
+            this.DI7.BackColor = System.Drawing.SystemColors.Control;
+            this.DI7.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.DI7.CustomBackground = true;
+            this.DI7.CustomForeColor = true;
+            this.DI7.Enabled = false;
+            this.DI7.FlatAppearance.BorderColor = System.Drawing.Color.Black;
+            this.DI7.FlatAppearance.CheckedBackColor = System.Drawing.Color.Lime;
+            this.DI7.ForeColor = System.Drawing.Color.Gray;
+            this.DI7.Location = new System.Drawing.Point(10, 166);
+            this.DI7.Name = "DI7";
+            this.DI7.Size = new System.Drawing.Size(47, 17);
+            this.DI7.Style = MetroFramework.MetroColorStyle.Green;
+            this.DI7.TabIndex = 26;
+            this.DI7.Text = "DI 7";
+            this.DI7.UseStyleColors = true;
+            this.DI7.UseVisualStyleBackColor = false;
+            // 
+            // DI6
+            // 
+            this.DI6.AutoSize = true;
+            this.DI6.BackColor = System.Drawing.SystemColors.Control;
+            this.DI6.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.DI6.CustomBackground = true;
+            this.DI6.CustomForeColor = true;
+            this.DI6.Enabled = false;
+            this.DI6.FlatAppearance.BorderColor = System.Drawing.Color.Black;
+            this.DI6.FlatAppearance.CheckedBackColor = System.Drawing.Color.Lime;
+            this.DI6.ForeColor = System.Drawing.Color.Gray;
+            this.DI6.Location = new System.Drawing.Point(10, 143);
+            this.DI6.Name = "DI6";
+            this.DI6.Size = new System.Drawing.Size(51, 17);
+            this.DI6.Style = MetroFramework.MetroColorStyle.Green;
+            this.DI6.TabIndex = 25;
+            this.DI6.Text = "DI 6 ";
+            this.DI6.UseStyleColors = true;
+            this.DI6.UseVisualStyleBackColor = false;
+            // 
+            // DI5
+            // 
+            this.DI5.AutoSize = true;
+            this.DI5.BackColor = System.Drawing.SystemColors.Control;
+            this.DI5.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.DI5.CustomBackground = true;
+            this.DI5.CustomForeColor = true;
+            this.DI5.Enabled = false;
+            this.DI5.FlatAppearance.BorderColor = System.Drawing.Color.Black;
+            this.DI5.FlatAppearance.CheckedBackColor = System.Drawing.Color.Lime;
+            this.DI5.ForeColor = System.Drawing.Color.Gray;
+            this.DI5.Location = new System.Drawing.Point(10, 120);
+            this.DI5.Name = "DI5";
+            this.DI5.Size = new System.Drawing.Size(47, 17);
+            this.DI5.Style = MetroFramework.MetroColorStyle.Green;
+            this.DI5.TabIndex = 24;
+            this.DI5.Text = "DI 5";
+            this.DI5.UseStyleColors = true;
+            this.DI5.UseVisualStyleBackColor = false;
+            // 
+            // DI4
+            // 
+            this.DI4.AutoSize = true;
+            this.DI4.BackColor = System.Drawing.SystemColors.Control;
+            this.DI4.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.DI4.CustomBackground = true;
+            this.DI4.CustomForeColor = true;
+            this.DI4.Enabled = false;
+            this.DI4.FlatAppearance.BorderColor = System.Drawing.Color.Black;
+            this.DI4.FlatAppearance.CheckedBackColor = System.Drawing.Color.Lime;
+            this.DI4.ForeColor = System.Drawing.Color.Gray;
+            this.DI4.Location = new System.Drawing.Point(10, 97);
+            this.DI4.Name = "DI4";
+            this.DI4.Size = new System.Drawing.Size(47, 17);
+            this.DI4.Style = MetroFramework.MetroColorStyle.Green;
+            this.DI4.TabIndex = 23;
+            this.DI4.Text = "DI 4";
+            this.DI4.UseStyleColors = true;
+            this.DI4.UseVisualStyleBackColor = false;
+            // 
+            // DI3
+            // 
+            this.DI3.AutoSize = true;
+            this.DI3.BackColor = System.Drawing.SystemColors.Control;
+            this.DI3.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.DI3.CustomBackground = true;
+            this.DI3.CustomForeColor = true;
+            this.DI3.Enabled = false;
+            this.DI3.FlatAppearance.BorderColor = System.Drawing.Color.Black;
+            this.DI3.FlatAppearance.CheckedBackColor = System.Drawing.Color.Lime;
+            this.DI3.ForeColor = System.Drawing.Color.Gray;
+            this.DI3.Location = new System.Drawing.Point(10, 74);
+            this.DI3.Name = "DI3";
+            this.DI3.Size = new System.Drawing.Size(51, 17);
+            this.DI3.Style = MetroFramework.MetroColorStyle.Green;
+            this.DI3.TabIndex = 22;
+            this.DI3.Text = "DI 3 ";
+            this.DI3.UseStyleColors = true;
+            this.DI3.UseVisualStyleBackColor = false;
+            // 
+            // DI2
+            // 
+            this.DI2.AutoSize = true;
+            this.DI2.BackColor = System.Drawing.SystemColors.Control;
+            this.DI2.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.DI2.CustomBackground = true;
+            this.DI2.CustomForeColor = true;
+            this.DI2.Enabled = false;
+            this.DI2.FlatAppearance.BorderColor = System.Drawing.Color.Black;
+            this.DI2.FlatAppearance.CheckedBackColor = System.Drawing.Color.Lime;
+            this.DI2.ForeColor = System.Drawing.Color.Gray;
+            this.DI2.Location = new System.Drawing.Point(10, 51);
+            this.DI2.Name = "DI2";
+            this.DI2.Size = new System.Drawing.Size(47, 17);
+            this.DI2.Style = MetroFramework.MetroColorStyle.Green;
+            this.DI2.TabIndex = 21;
+            this.DI2.Text = "DI 2";
+            this.DI2.UseStyleColors = true;
+            this.DI2.UseVisualStyleBackColor = false;
+            // 
+            // DI1
+            // 
+            this.DI1.AutoSize = true;
+            this.DI1.BackColor = System.Drawing.SystemColors.Control;
+            this.DI1.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.DI1.CustomBackground = true;
+            this.DI1.CustomForeColor = true;
+            this.DI1.Enabled = false;
+            this.DI1.FlatAppearance.BorderColor = System.Drawing.Color.Black;
+            this.DI1.FlatAppearance.CheckedBackColor = System.Drawing.Color.Lime;
+            this.DI1.ForeColor = System.Drawing.Color.Gray;
+            this.DI1.Location = new System.Drawing.Point(10, 28);
+            this.DI1.Name = "DI1";
+            this.DI1.Size = new System.Drawing.Size(47, 17);
+            this.DI1.Style = MetroFramework.MetroColorStyle.Green;
+            this.DI1.TabIndex = 20;
+            this.DI1.Text = "DI 1";
+            this.DI1.UseStyleColors = true;
+            this.DI1.UseVisualStyleBackColor = false;
+            // 
+            // DI0
+            // 
+            this.DI0.AutoSize = true;
+            this.DI0.BackColor = System.Drawing.SystemColors.Control;
+            this.DI0.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.DI0.CustomBackground = true;
+            this.DI0.CustomForeColor = true;
+            this.DI0.Enabled = false;
+            this.DI0.FlatAppearance.BorderColor = System.Drawing.Color.Black;
+            this.DI0.FlatAppearance.CheckedBackColor = System.Drawing.Color.Lime;
+            this.DI0.ForeColor = System.Drawing.Color.Gray;
+            this.DI0.Location = new System.Drawing.Point(10, 5);
+            this.DI0.Name = "DI0";
+            this.DI0.Size = new System.Drawing.Size(47, 17);
+            this.DI0.Style = MetroFramework.MetroColorStyle.Green;
+            this.DI0.TabIndex = 19;
+            this.DI0.Text = "DI 0";
+            this.DI0.UseStyleColors = true;
+            this.DI0.UseVisualStyleBackColor = false;
+            // 
+            // tab4
+            // 
+            this.tab4.BackColor = System.Drawing.SystemColors.Control;
+            this.tab4.Controls.Add(this.btn_ForceOutputs);
+            this.tab4.Controls.Add(this.pnl_Outputs);
+            this.tab4.Location = new System.Drawing.Point(4, 25);
+            this.tab4.Name = "tab4";
+            this.tab4.Padding = new System.Windows.Forms.Padding(3);
+            this.tab4.Size = new System.Drawing.Size(262, 301);
+            this.tab4.TabIndex = 1;
+            this.tab4.Text = "Outputs";
+            // 
+            // btn_ForceOutputs
+            // 
+            this.btn_ForceOutputs.AutoSize = true;
+            this.btn_ForceOutputs.BackColor = System.Drawing.SystemColors.Control;
+            this.btn_ForceOutputs.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btn_ForceOutputs.CustomBackground = true;
+            this.btn_ForceOutputs.CustomForeColor = true;
+            this.btn_ForceOutputs.FlatAppearance.BorderColor = System.Drawing.Color.Black;
+            this.btn_ForceOutputs.FlatAppearance.CheckedBackColor = System.Drawing.Color.Lime;
+            this.btn_ForceOutputs.ForeColor = System.Drawing.Color.Black;
+            this.btn_ForceOutputs.Location = new System.Drawing.Point(144, 9);
+            this.btn_ForceOutputs.Name = "btn_ForceOutputs";
+            this.btn_ForceOutputs.Size = new System.Drawing.Size(56, 17);
+            this.btn_ForceOutputs.Style = MetroFramework.MetroColorStyle.Green;
+            this.btn_ForceOutputs.TabIndex = 33;
+            this.btn_ForceOutputs.Text = "Force";
+            this.btn_ForceOutputs.UseStyleColors = true;
+            this.btn_ForceOutputs.UseVisualStyleBackColor = false;
+            // 
+            // pnl_Outputs
+            // 
+            this.pnl_Outputs.Controls.Add(this.DO0);
+            this.pnl_Outputs.Controls.Add(this.DO1);
+            this.pnl_Outputs.Controls.Add(this.DO5);
+            this.pnl_Outputs.Controls.Add(this.DO2);
+            this.pnl_Outputs.Controls.Add(this.DO4);
+            this.pnl_Outputs.Controls.Add(this.DO3);
+            this.pnl_Outputs.Location = new System.Drawing.Point(6, 6);
+            this.pnl_Outputs.Name = "pnl_Outputs";
+            this.pnl_Outputs.Size = new System.Drawing.Size(132, 289);
+            this.pnl_Outputs.TabIndex = 31;
+            // 
+            // DO0
+            // 
+            this.DO0.AutoSize = true;
+            this.DO0.BackColor = System.Drawing.SystemColors.Control;
+            this.DO0.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.DO0.CustomBackground = true;
+            this.DO0.CustomForeColor = true;
+            this.DO0.FlatAppearance.BorderColor = System.Drawing.Color.Black;
+            this.DO0.FlatAppearance.CheckedBackColor = System.Drawing.Color.Lime;
+            this.DO0.ForeColor = System.Drawing.SystemColors.Highlight;
+            this.DO0.Location = new System.Drawing.Point(3, 3);
+            this.DO0.Name = "DO0";
+            this.DO0.Size = new System.Drawing.Size(92, 17);
+            this.DO0.Style = MetroFramework.MetroColorStyle.Green;
+            this.DO0.TabIndex = 26;
+            this.DO0.Text = "DO 0 (Print)";
+            this.DO0.UseStyleColors = true;
+            this.DO0.UseVisualStyleBackColor = false;
+            // 
+            // DO1
+            // 
+            this.DO1.AutoSize = true;
+            this.DO1.BackColor = System.Drawing.SystemColors.Control;
+            this.DO1.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.DO1.CustomBackground = true;
+            this.DO1.CustomForeColor = true;
+            this.DO1.FlatAppearance.BorderColor = System.Drawing.Color.Black;
+            this.DO1.FlatAppearance.CheckedBackColor = System.Drawing.Color.Lime;
+            this.DO1.ForeColor = System.Drawing.SystemColors.Highlight;
+            this.DO1.Location = new System.Drawing.Point(3, 26);
+            this.DO1.Name = "DO1";
+            this.DO1.Size = new System.Drawing.Size(54, 17);
+            this.DO1.Style = MetroFramework.MetroColorStyle.Green;
+            this.DO1.TabIndex = 27;
+            this.DO1.Text = "DO 1";
+            this.DO1.UseStyleColors = true;
+            this.DO1.UseVisualStyleBackColor = false;
+            // 
+            // DO5
+            // 
+            this.DO5.AutoSize = true;
+            this.DO5.BackColor = System.Drawing.SystemColors.Control;
+            this.DO5.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.DO5.CustomBackground = true;
+            this.DO5.CustomForeColor = true;
+            this.DO5.FlatAppearance.BorderColor = System.Drawing.Color.Black;
+            this.DO5.FlatAppearance.CheckedBackColor = System.Drawing.Color.Lime;
+            this.DO5.ForeColor = System.Drawing.SystemColors.Highlight;
+            this.DO5.Location = new System.Drawing.Point(3, 118);
+            this.DO5.Name = "DO5";
+            this.DO5.Size = new System.Drawing.Size(54, 17);
+            this.DO5.Style = MetroFramework.MetroColorStyle.Green;
+            this.DO5.TabIndex = 31;
+            this.DO5.Text = "DO 5";
+            this.DO5.UseStyleColors = true;
+            this.DO5.UseVisualStyleBackColor = false;
+            // 
+            // DO2
+            // 
+            this.DO2.AutoSize = true;
+            this.DO2.BackColor = System.Drawing.SystemColors.Control;
+            this.DO2.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.DO2.CustomBackground = true;
+            this.DO2.CustomForeColor = true;
+            this.DO2.FlatAppearance.BorderColor = System.Drawing.Color.Black;
+            this.DO2.FlatAppearance.CheckedBackColor = System.Drawing.Color.Lime;
+            this.DO2.ForeColor = System.Drawing.SystemColors.Highlight;
+            this.DO2.Location = new System.Drawing.Point(3, 49);
+            this.DO2.Name = "DO2";
+            this.DO2.Size = new System.Drawing.Size(54, 17);
+            this.DO2.Style = MetroFramework.MetroColorStyle.Green;
+            this.DO2.TabIndex = 28;
+            this.DO2.Text = "DO 2";
+            this.DO2.UseStyleColors = true;
+            this.DO2.UseVisualStyleBackColor = false;
+            // 
+            // DO4
+            // 
+            this.DO4.AutoSize = true;
+            this.DO4.BackColor = System.Drawing.SystemColors.Control;
+            this.DO4.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.DO4.CustomBackground = true;
+            this.DO4.CustomForeColor = true;
+            this.DO4.FlatAppearance.BorderColor = System.Drawing.Color.Black;
+            this.DO4.FlatAppearance.CheckedBackColor = System.Drawing.Color.Lime;
+            this.DO4.ForeColor = System.Drawing.SystemColors.Highlight;
+            this.DO4.Location = new System.Drawing.Point(3, 95);
+            this.DO4.Name = "DO4";
+            this.DO4.Size = new System.Drawing.Size(54, 17);
+            this.DO4.Style = MetroFramework.MetroColorStyle.Green;
+            this.DO4.TabIndex = 30;
+            this.DO4.Text = "DO 4";
+            this.DO4.UseStyleColors = true;
+            this.DO4.UseVisualStyleBackColor = false;
+            // 
+            // DO3
+            // 
+            this.DO3.AutoSize = true;
+            this.DO3.BackColor = System.Drawing.SystemColors.Control;
+            this.DO3.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.DO3.CustomBackground = true;
+            this.DO3.CustomForeColor = true;
+            this.DO3.FlatAppearance.BorderColor = System.Drawing.Color.Black;
+            this.DO3.FlatAppearance.CheckedBackColor = System.Drawing.Color.Lime;
+            this.DO3.ForeColor = System.Drawing.SystemColors.Highlight;
+            this.DO3.Location = new System.Drawing.Point(3, 72);
+            this.DO3.Name = "DO3";
+            this.DO3.Size = new System.Drawing.Size(54, 17);
+            this.DO3.Style = MetroFramework.MetroColorStyle.Green;
+            this.DO3.TabIndex = 29;
+            this.DO3.Text = "DO 3";
+            this.DO3.UseStyleColors = true;
+            this.DO3.UseVisualStyleBackColor = false;
+            // 
+            // tab_Servo
+            // 
+            this.tab_Servo.BackColor = System.Drawing.SystemColors.Control;
+            this.tab_Servo.Controls.Add(this.pnl_ServoControl);
+            this.tab_Servo.Controls.Add(this.tabControl2);
+            this.tab_Servo.Controls.Add(this.groupBox4);
+            this.tab_Servo.Location = new System.Drawing.Point(4, 25);
+            this.tab_Servo.Name = "tab_Servo";
+            this.tab_Servo.Size = new System.Drawing.Size(464, 688);
+            this.tab_Servo.TabIndex = 3;
+            this.tab_Servo.Text = "Servo";
             // 
             // pnl_ServoControl
             // 
@@ -876,96 +1355,6 @@
             this.btn_CMMO_Stop.Text = "Stop";
             this.btn_CMMO_Stop.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.btn_CMMO_Stop.UseVisualStyleBackColor = true;
-            // 
-            // label96
-            // 
-            this.label96.AutoSize = true;
-            this.label96.Location = new System.Drawing.Point(195, 65);
-            this.label96.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label96.Name = "label96";
-            this.label96.Size = new System.Drawing.Size(30, 17);
-            this.label96.TabIndex = 560;
-            this.label96.Text = "mm";
-            // 
-            // label95
-            // 
-            this.label95.AutoSize = true;
-            this.label95.Location = new System.Drawing.Point(7, 86);
-            this.label95.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label95.Name = "label95";
-            this.label95.Size = new System.Drawing.Size(117, 17);
-            this.label95.TabIndex = 559;
-            this.label95.Text = "Record Selected:";
-            // 
-            // txt_CMMO_RecSelected
-            // 
-            this.txt_CMMO_RecSelected.AutoSize = true;
-            this.txt_CMMO_RecSelected.ForeColor = System.Drawing.Color.Blue;
-            this.txt_CMMO_RecSelected.Location = new System.Drawing.Point(127, 86);
-            this.txt_CMMO_RecSelected.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.txt_CMMO_RecSelected.Name = "txt_CMMO_RecSelected";
-            this.txt_CMMO_RecSelected.Size = new System.Drawing.Size(60, 17);
-            this.txt_CMMO_RecSelected.TabIndex = 558;
-            this.txt_CMMO_RecSelected.Text = "000.000";
-            // 
-            // label103
-            // 
-            this.label103.AutoSize = true;
-            this.label103.Location = new System.Drawing.Point(7, 65);
-            this.label103.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label103.Name = "label103";
-            this.label103.Size = new System.Drawing.Size(112, 17);
-            this.label103.TabIndex = 557;
-            this.label103.Text = "Current position:";
-            // 
-            // txt_CMMO_Position
-            // 
-            this.txt_CMMO_Position.AutoSize = true;
-            this.txt_CMMO_Position.ForeColor = System.Drawing.Color.Blue;
-            this.txt_CMMO_Position.Location = new System.Drawing.Point(127, 65);
-            this.txt_CMMO_Position.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.txt_CMMO_Position.Name = "txt_CMMO_Position";
-            this.txt_CMMO_Position.Size = new System.Drawing.Size(60, 17);
-            this.txt_CMMO_Position.TabIndex = 556;
-            this.txt_CMMO_Position.Text = "000.000";
-            // 
-            // txt_CMMOConnStatus
-            // 
-            this.txt_CMMOConnStatus.AutoSize = true;
-            this.txt_CMMOConnStatus.ForeColor = System.Drawing.Color.DeepSkyBlue;
-            this.txt_CMMOConnStatus.Location = new System.Drawing.Point(7, 33);
-            this.txt_CMMOConnStatus.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.txt_CMMOConnStatus.Name = "txt_CMMOConnStatus";
-            this.txt_CMMOConnStatus.Size = new System.Drawing.Size(91, 17);
-            this.txt_CMMOConnStatus.TabIndex = 555;
-            this.txt_CMMOConnStatus.Text = "Comm Status";
-            // 
-            // label67
-            // 
-            this.label67.AutoSize = true;
-            this.label67.ForeColor = System.Drawing.SystemColors.ControlDark;
-            this.label67.Location = new System.Drawing.Point(106, 33);
-            this.label67.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label67.Name = "label67";
-            this.label67.Size = new System.Drawing.Size(57, 17);
-            this.label67.TabIndex = 552;
-            this.label67.Text = "Remote";
-            // 
-            // btn_CMMO_Remote
-            // 
-            this.btn_CMMO_Remote.BackColor = System.Drawing.SystemColors.Control;
-            this.btn_CMMO_Remote.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btn_CMMO_Remote.CustomBackground = true;
-            this.btn_CMMO_Remote.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_CMMO_Remote.Location = new System.Drawing.Point(168, 31);
-            this.btn_CMMO_Remote.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.btn_CMMO_Remote.Name = "btn_CMMO_Remote";
-            this.btn_CMMO_Remote.Size = new System.Drawing.Size(72, 19);
-            this.btn_CMMO_Remote.TabIndex = 551;
-            this.btn_CMMO_Remote.Text = "Off";
-            this.btn_CMMO_Remote.Theme = MetroFramework.MetroThemeStyle.Dark;
-            this.btn_CMMO_Remote.UseStyleColors = true;
-            this.btn_CMMO_Remote.UseVisualStyleBackColor = false;
             // 
             // tabControl2
             // 
@@ -1615,378 +2004,24 @@
             this.cbx_Reg1Bit4.Theme = MetroFramework.MetroThemeStyle.Dark;
             this.cbx_Reg1Bit4.UseVisualStyleBackColor = true;
             // 
-            // tab_RemoteIO
+            // groupBox4
             // 
-            this.tab_RemoteIO.BackColor = System.Drawing.SystemColors.Control;
-            this.tab_RemoteIO.Controls.Add(this.groupBox5);
-            this.tab_RemoteIO.Controls.Add(this.tabControl3);
-            this.tab_RemoteIO.Location = new System.Drawing.Point(4, 25);
-            this.tab_RemoteIO.Name = "tab_RemoteIO";
-            this.tab_RemoteIO.Size = new System.Drawing.Size(464, 688);
-            this.tab_RemoteIO.TabIndex = 2;
-            this.tab_RemoteIO.Text = "RemoteIO";
-            // 
-            // tab_Servo
-            // 
-            this.tab_Servo.BackColor = System.Drawing.SystemColors.Control;
-            this.tab_Servo.Controls.Add(this.pnl_ServoControl);
-            this.tab_Servo.Controls.Add(this.tabControl2);
-            this.tab_Servo.Controls.Add(this.groupBox4);
-            this.tab_Servo.Location = new System.Drawing.Point(4, 25);
-            this.tab_Servo.Name = "tab_Servo";
-            this.tab_Servo.Size = new System.Drawing.Size(464, 688);
-            this.tab_Servo.TabIndex = 3;
-            this.tab_Servo.Text = "Servo";
-            // 
-            // tabControl3
-            // 
-            this.tabControl3.Controls.Add(this.tabPage3);
-            this.tabControl3.Controls.Add(this.tab4);
-            this.tabControl3.Location = new System.Drawing.Point(75, 235);
-            this.tabControl3.Name = "tabControl3";
-            this.tabControl3.SelectedIndex = 0;
-            this.tabControl3.Size = new System.Drawing.Size(270, 330);
-            this.tabControl3.TabIndex = 33;
-            // 
-            // tabPage3
-            // 
-            this.tabPage3.BackColor = System.Drawing.SystemColors.Control;
-            this.tabPage3.Controls.Add(this.DI11);
-            this.tabPage3.Controls.Add(this.DI10);
-            this.tabPage3.Controls.Add(this.DI9);
-            this.tabPage3.Controls.Add(this.DI8);
-            this.tabPage3.Controls.Add(this.DI7);
-            this.tabPage3.Controls.Add(this.DI6);
-            this.tabPage3.Controls.Add(this.DI5);
-            this.tabPage3.Controls.Add(this.DI4);
-            this.tabPage3.Controls.Add(this.DI3);
-            this.tabPage3.Controls.Add(this.DI2);
-            this.tabPage3.Controls.Add(this.DI1);
-            this.tabPage3.Controls.Add(this.DI0);
-            this.tabPage3.Location = new System.Drawing.Point(4, 25);
-            this.tabPage3.Name = "tabPage3";
-            this.tabPage3.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage3.Size = new System.Drawing.Size(262, 301);
-            this.tabPage3.TabIndex = 0;
-            this.tabPage3.Text = "Inputs";
-            // 
-            // DI7
-            // 
-            this.DI7.AutoSize = true;
-            this.DI7.BackColor = System.Drawing.SystemColors.Control;
-            this.DI7.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.DI7.CustomBackground = true;
-            this.DI7.CustomForeColor = true;
-            this.DI7.Enabled = false;
-            this.DI7.FlatAppearance.BorderColor = System.Drawing.Color.Black;
-            this.DI7.FlatAppearance.CheckedBackColor = System.Drawing.Color.Lime;
-            this.DI7.ForeColor = System.Drawing.Color.Gray;
-            this.DI7.Location = new System.Drawing.Point(10, 166);
-            this.DI7.Name = "DI7";
-            this.DI7.Size = new System.Drawing.Size(47, 17);
-            this.DI7.Style = MetroFramework.MetroColorStyle.Green;
-            this.DI7.TabIndex = 26;
-            this.DI7.Text = "DI 7";
-            this.DI7.UseStyleColors = true;
-            this.DI7.UseVisualStyleBackColor = false;
-            // 
-            // DI6
-            // 
-            this.DI6.AutoSize = true;
-            this.DI6.BackColor = System.Drawing.SystemColors.Control;
-            this.DI6.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.DI6.CustomBackground = true;
-            this.DI6.CustomForeColor = true;
-            this.DI6.Enabled = false;
-            this.DI6.FlatAppearance.BorderColor = System.Drawing.Color.Black;
-            this.DI6.FlatAppearance.CheckedBackColor = System.Drawing.Color.Lime;
-            this.DI6.ForeColor = System.Drawing.Color.Gray;
-            this.DI6.Location = new System.Drawing.Point(10, 143);
-            this.DI6.Name = "DI6";
-            this.DI6.Size = new System.Drawing.Size(51, 17);
-            this.DI6.Style = MetroFramework.MetroColorStyle.Green;
-            this.DI6.TabIndex = 25;
-            this.DI6.Text = "DI 6 ";
-            this.DI6.UseStyleColors = true;
-            this.DI6.UseVisualStyleBackColor = false;
-            // 
-            // DI5
-            // 
-            this.DI5.AutoSize = true;
-            this.DI5.BackColor = System.Drawing.SystemColors.Control;
-            this.DI5.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.DI5.CustomBackground = true;
-            this.DI5.CustomForeColor = true;
-            this.DI5.Enabled = false;
-            this.DI5.FlatAppearance.BorderColor = System.Drawing.Color.Black;
-            this.DI5.FlatAppearance.CheckedBackColor = System.Drawing.Color.Lime;
-            this.DI5.ForeColor = System.Drawing.Color.Gray;
-            this.DI5.Location = new System.Drawing.Point(10, 120);
-            this.DI5.Name = "DI5";
-            this.DI5.Size = new System.Drawing.Size(47, 17);
-            this.DI5.Style = MetroFramework.MetroColorStyle.Green;
-            this.DI5.TabIndex = 24;
-            this.DI5.Text = "DI 5";
-            this.DI5.UseStyleColors = true;
-            this.DI5.UseVisualStyleBackColor = false;
-            // 
-            // DI4
-            // 
-            this.DI4.AutoSize = true;
-            this.DI4.BackColor = System.Drawing.SystemColors.Control;
-            this.DI4.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.DI4.CustomBackground = true;
-            this.DI4.CustomForeColor = true;
-            this.DI4.Enabled = false;
-            this.DI4.FlatAppearance.BorderColor = System.Drawing.Color.Black;
-            this.DI4.FlatAppearance.CheckedBackColor = System.Drawing.Color.Lime;
-            this.DI4.ForeColor = System.Drawing.Color.Gray;
-            this.DI4.Location = new System.Drawing.Point(10, 97);
-            this.DI4.Name = "DI4";
-            this.DI4.Size = new System.Drawing.Size(47, 17);
-            this.DI4.Style = MetroFramework.MetroColorStyle.Green;
-            this.DI4.TabIndex = 23;
-            this.DI4.Text = "DI 4";
-            this.DI4.UseStyleColors = true;
-            this.DI4.UseVisualStyleBackColor = false;
-            // 
-            // DI3
-            // 
-            this.DI3.AutoSize = true;
-            this.DI3.BackColor = System.Drawing.SystemColors.Control;
-            this.DI3.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.DI3.CustomBackground = true;
-            this.DI3.CustomForeColor = true;
-            this.DI3.Enabled = false;
-            this.DI3.FlatAppearance.BorderColor = System.Drawing.Color.Black;
-            this.DI3.FlatAppearance.CheckedBackColor = System.Drawing.Color.Lime;
-            this.DI3.ForeColor = System.Drawing.Color.Gray;
-            this.DI3.Location = new System.Drawing.Point(10, 74);
-            this.DI3.Name = "DI3";
-            this.DI3.Size = new System.Drawing.Size(51, 17);
-            this.DI3.Style = MetroFramework.MetroColorStyle.Green;
-            this.DI3.TabIndex = 22;
-            this.DI3.Text = "DI 3 ";
-            this.DI3.UseStyleColors = true;
-            this.DI3.UseVisualStyleBackColor = false;
-            // 
-            // DI2
-            // 
-            this.DI2.AutoSize = true;
-            this.DI2.BackColor = System.Drawing.SystemColors.Control;
-            this.DI2.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.DI2.CustomBackground = true;
-            this.DI2.CustomForeColor = true;
-            this.DI2.Enabled = false;
-            this.DI2.FlatAppearance.BorderColor = System.Drawing.Color.Black;
-            this.DI2.FlatAppearance.CheckedBackColor = System.Drawing.Color.Lime;
-            this.DI2.ForeColor = System.Drawing.Color.Gray;
-            this.DI2.Location = new System.Drawing.Point(10, 51);
-            this.DI2.Name = "DI2";
-            this.DI2.Size = new System.Drawing.Size(47, 17);
-            this.DI2.Style = MetroFramework.MetroColorStyle.Green;
-            this.DI2.TabIndex = 21;
-            this.DI2.Text = "DI 2";
-            this.DI2.UseStyleColors = true;
-            this.DI2.UseVisualStyleBackColor = false;
-            // 
-            // DI1
-            // 
-            this.DI1.AutoSize = true;
-            this.DI1.BackColor = System.Drawing.SystemColors.Control;
-            this.DI1.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.DI1.CustomBackground = true;
-            this.DI1.CustomForeColor = true;
-            this.DI1.Enabled = false;
-            this.DI1.FlatAppearance.BorderColor = System.Drawing.Color.Black;
-            this.DI1.FlatAppearance.CheckedBackColor = System.Drawing.Color.Lime;
-            this.DI1.ForeColor = System.Drawing.Color.Gray;
-            this.DI1.Location = new System.Drawing.Point(10, 28);
-            this.DI1.Name = "DI1";
-            this.DI1.Size = new System.Drawing.Size(47, 17);
-            this.DI1.Style = MetroFramework.MetroColorStyle.Green;
-            this.DI1.TabIndex = 20;
-            this.DI1.Text = "DI 1";
-            this.DI1.UseStyleColors = true;
-            this.DI1.UseVisualStyleBackColor = false;
-            // 
-            // DI0
-            // 
-            this.DI0.AutoSize = true;
-            this.DI0.BackColor = System.Drawing.SystemColors.Control;
-            this.DI0.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.DI0.CustomBackground = true;
-            this.DI0.CustomForeColor = true;
-            this.DI0.Enabled = false;
-            this.DI0.FlatAppearance.BorderColor = System.Drawing.Color.Black;
-            this.DI0.FlatAppearance.CheckedBackColor = System.Drawing.Color.Lime;
-            this.DI0.ForeColor = System.Drawing.Color.Gray;
-            this.DI0.Location = new System.Drawing.Point(10, 5);
-            this.DI0.Name = "DI0";
-            this.DI0.Size = new System.Drawing.Size(47, 17);
-            this.DI0.Style = MetroFramework.MetroColorStyle.Green;
-            this.DI0.TabIndex = 19;
-            this.DI0.Text = "DI 0";
-            this.DI0.UseStyleColors = true;
-            this.DI0.UseVisualStyleBackColor = false;
-            // 
-            // tab4
-            // 
-            this.tab4.BackColor = System.Drawing.SystemColors.Control;
-            this.tab4.Controls.Add(this.btn_ForceOutputs);
-            this.tab4.Controls.Add(this.pnl_Outputs);
-            this.tab4.Location = new System.Drawing.Point(4, 25);
-            this.tab4.Name = "tab4";
-            this.tab4.Padding = new System.Windows.Forms.Padding(3);
-            this.tab4.Size = new System.Drawing.Size(262, 301);
-            this.tab4.TabIndex = 1;
-            this.tab4.Text = "Outputs";
-            // 
-            // btn_ForceOutputs
-            // 
-            this.btn_ForceOutputs.AutoSize = true;
-            this.btn_ForceOutputs.BackColor = System.Drawing.SystemColors.Control;
-            this.btn_ForceOutputs.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btn_ForceOutputs.CustomBackground = true;
-            this.btn_ForceOutputs.CustomForeColor = true;
-            this.btn_ForceOutputs.FlatAppearance.BorderColor = System.Drawing.Color.Black;
-            this.btn_ForceOutputs.FlatAppearance.CheckedBackColor = System.Drawing.Color.Lime;
-            this.btn_ForceOutputs.ForeColor = System.Drawing.Color.Black;
-            this.btn_ForceOutputs.Location = new System.Drawing.Point(144, 9);
-            this.btn_ForceOutputs.Name = "btn_ForceOutputs";
-            this.btn_ForceOutputs.Size = new System.Drawing.Size(56, 17);
-            this.btn_ForceOutputs.Style = MetroFramework.MetroColorStyle.Green;
-            this.btn_ForceOutputs.TabIndex = 33;
-            this.btn_ForceOutputs.Text = "Force";
-            this.btn_ForceOutputs.UseStyleColors = true;
-            this.btn_ForceOutputs.UseVisualStyleBackColor = false;
-            // 
-            // pnl_Outputs
-            // 
-            this.pnl_Outputs.Controls.Add(this.DO0);
-            this.pnl_Outputs.Controls.Add(this.DO1);
-            this.pnl_Outputs.Controls.Add(this.DO5);
-            this.pnl_Outputs.Controls.Add(this.DO2);
-            this.pnl_Outputs.Controls.Add(this.DO4);
-            this.pnl_Outputs.Controls.Add(this.DO3);
-            this.pnl_Outputs.Location = new System.Drawing.Point(6, 6);
-            this.pnl_Outputs.Name = "pnl_Outputs";
-            this.pnl_Outputs.Size = new System.Drawing.Size(132, 289);
-            this.pnl_Outputs.TabIndex = 31;
-            // 
-            // DO0
-            // 
-            this.DO0.AutoSize = true;
-            this.DO0.BackColor = System.Drawing.SystemColors.Control;
-            this.DO0.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.DO0.CustomBackground = true;
-            this.DO0.CustomForeColor = true;
-            this.DO0.FlatAppearance.BorderColor = System.Drawing.Color.Black;
-            this.DO0.FlatAppearance.CheckedBackColor = System.Drawing.Color.Lime;
-            this.DO0.ForeColor = System.Drawing.SystemColors.Highlight;
-            this.DO0.Location = new System.Drawing.Point(3, 3);
-            this.DO0.Name = "DO0";
-            this.DO0.Size = new System.Drawing.Size(92, 17);
-            this.DO0.Style = MetroFramework.MetroColorStyle.Green;
-            this.DO0.TabIndex = 26;
-            this.DO0.Text = "DO 0 (Print)";
-            this.DO0.UseStyleColors = true;
-            this.DO0.UseVisualStyleBackColor = false;
-            // 
-            // DO1
-            // 
-            this.DO1.AutoSize = true;
-            this.DO1.BackColor = System.Drawing.SystemColors.Control;
-            this.DO1.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.DO1.CustomBackground = true;
-            this.DO1.CustomForeColor = true;
-            this.DO1.FlatAppearance.BorderColor = System.Drawing.Color.Black;
-            this.DO1.FlatAppearance.CheckedBackColor = System.Drawing.Color.Lime;
-            this.DO1.ForeColor = System.Drawing.SystemColors.Highlight;
-            this.DO1.Location = new System.Drawing.Point(3, 26);
-            this.DO1.Name = "DO1";
-            this.DO1.Size = new System.Drawing.Size(54, 17);
-            this.DO1.Style = MetroFramework.MetroColorStyle.Green;
-            this.DO1.TabIndex = 27;
-            this.DO1.Text = "DO 1";
-            this.DO1.UseStyleColors = true;
-            this.DO1.UseVisualStyleBackColor = false;
-            // 
-            // DO5
-            // 
-            this.DO5.AutoSize = true;
-            this.DO5.BackColor = System.Drawing.SystemColors.Control;
-            this.DO5.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.DO5.CustomBackground = true;
-            this.DO5.CustomForeColor = true;
-            this.DO5.FlatAppearance.BorderColor = System.Drawing.Color.Black;
-            this.DO5.FlatAppearance.CheckedBackColor = System.Drawing.Color.Lime;
-            this.DO5.ForeColor = System.Drawing.SystemColors.Highlight;
-            this.DO5.Location = new System.Drawing.Point(3, 118);
-            this.DO5.Name = "DO5";
-            this.DO5.Size = new System.Drawing.Size(54, 17);
-            this.DO5.Style = MetroFramework.MetroColorStyle.Green;
-            this.DO5.TabIndex = 31;
-            this.DO5.Text = "DO 5";
-            this.DO5.UseStyleColors = true;
-            this.DO5.UseVisualStyleBackColor = false;
-            // 
-            // DO2
-            // 
-            this.DO2.AutoSize = true;
-            this.DO2.BackColor = System.Drawing.SystemColors.Control;
-            this.DO2.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.DO2.CustomBackground = true;
-            this.DO2.CustomForeColor = true;
-            this.DO2.FlatAppearance.BorderColor = System.Drawing.Color.Black;
-            this.DO2.FlatAppearance.CheckedBackColor = System.Drawing.Color.Lime;
-            this.DO2.ForeColor = System.Drawing.SystemColors.Highlight;
-            this.DO2.Location = new System.Drawing.Point(3, 49);
-            this.DO2.Name = "DO2";
-            this.DO2.Size = new System.Drawing.Size(54, 17);
-            this.DO2.Style = MetroFramework.MetroColorStyle.Green;
-            this.DO2.TabIndex = 28;
-            this.DO2.Text = "DO 2";
-            this.DO2.UseStyleColors = true;
-            this.DO2.UseVisualStyleBackColor = false;
-            // 
-            // DO4
-            // 
-            this.DO4.AutoSize = true;
-            this.DO4.BackColor = System.Drawing.SystemColors.Control;
-            this.DO4.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.DO4.CustomBackground = true;
-            this.DO4.CustomForeColor = true;
-            this.DO4.FlatAppearance.BorderColor = System.Drawing.Color.Black;
-            this.DO4.FlatAppearance.CheckedBackColor = System.Drawing.Color.Lime;
-            this.DO4.ForeColor = System.Drawing.SystemColors.Highlight;
-            this.DO4.Location = new System.Drawing.Point(3, 95);
-            this.DO4.Name = "DO4";
-            this.DO4.Size = new System.Drawing.Size(54, 17);
-            this.DO4.Style = MetroFramework.MetroColorStyle.Green;
-            this.DO4.TabIndex = 30;
-            this.DO4.Text = "DO 4";
-            this.DO4.UseStyleColors = true;
-            this.DO4.UseVisualStyleBackColor = false;
-            // 
-            // DO3
-            // 
-            this.DO3.AutoSize = true;
-            this.DO3.BackColor = System.Drawing.SystemColors.Control;
-            this.DO3.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.DO3.CustomBackground = true;
-            this.DO3.CustomForeColor = true;
-            this.DO3.FlatAppearance.BorderColor = System.Drawing.Color.Black;
-            this.DO3.FlatAppearance.CheckedBackColor = System.Drawing.Color.Lime;
-            this.DO3.ForeColor = System.Drawing.SystemColors.Highlight;
-            this.DO3.Location = new System.Drawing.Point(3, 72);
-            this.DO3.Name = "DO3";
-            this.DO3.Size = new System.Drawing.Size(54, 17);
-            this.DO3.Style = MetroFramework.MetroColorStyle.Green;
-            this.DO3.TabIndex = 29;
-            this.DO3.Text = "DO 3";
-            this.DO3.UseStyleColors = true;
-            this.DO3.UseVisualStyleBackColor = false;
+            this.groupBox4.Controls.Add(this.ServoDisconnect);
+            this.groupBox4.Controls.Add(this.btn_ServoConnect);
+            this.groupBox4.Controls.Add(this.label96);
+            this.groupBox4.Controls.Add(this.label95);
+            this.groupBox4.Controls.Add(this.txt_CMMO_RecSelected);
+            this.groupBox4.Controls.Add(this.label103);
+            this.groupBox4.Controls.Add(this.txt_CMMO_Position);
+            this.groupBox4.Controls.Add(this.txt_CMMOConnStatus);
+            this.groupBox4.Controls.Add(this.label67);
+            this.groupBox4.Controls.Add(this.btn_CMMO_Remote);
+            this.groupBox4.Location = new System.Drawing.Point(95, 27);
+            this.groupBox4.Name = "groupBox4";
+            this.groupBox4.Size = new System.Drawing.Size(271, 167);
+            this.groupBox4.TabIndex = 36;
+            this.groupBox4.TabStop = false;
+            this.groupBox4.Text = "FESTO Servo motor";
             // 
             // ServoDisconnect
             // 
@@ -2012,146 +2047,131 @@
             this.btn_ServoConnect.Text = "Connect";
             this.btn_ServoConnect.UseVisualStyleBackColor = true;
             // 
-            // groupBox5
+            // label96
             // 
-            this.groupBox5.Controls.Add(this.txt_ADAM6250_Port);
-            this.groupBox5.Controls.Add(this.txt_ADAM6250_IP);
-            this.groupBox5.Controls.Add(this.btn_RemoteIODisconnect);
-            this.groupBox5.Controls.Add(this.btn_RemoteIOConnect);
-            this.groupBox5.Location = new System.Drawing.Point(75, 46);
-            this.groupBox5.Margin = new System.Windows.Forms.Padding(4);
-            this.groupBox5.Name = "groupBox5";
-            this.groupBox5.Padding = new System.Windows.Forms.Padding(4);
-            this.groupBox5.Size = new System.Drawing.Size(270, 96);
-            this.groupBox5.TabIndex = 34;
-            this.groupBox5.TabStop = false;
-            this.groupBox5.Text = "Modbus TCP Communication";
+            this.label96.AutoSize = true;
+            this.label96.Location = new System.Drawing.Point(195, 65);
+            this.label96.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label96.Name = "label96";
+            this.label96.Size = new System.Drawing.Size(30, 17);
+            this.label96.TabIndex = 560;
+            this.label96.Text = "mm";
             // 
-            // txt_ADAM6250_Port
+            // label95
             // 
-            this.txt_ADAM6250_Port.BackColor = System.Drawing.SystemColors.Control;
-            this.txt_ADAM6250_Port.Enabled = false;
-            this.txt_ADAM6250_Port.Location = new System.Drawing.Point(136, 27);
-            this.txt_ADAM6250_Port.Margin = new System.Windows.Forms.Padding(4);
-            this.txt_ADAM6250_Port.Name = "txt_ADAM6250_Port";
-            this.txt_ADAM6250_Port.Size = new System.Drawing.Size(120, 22);
-            this.txt_ADAM6250_Port.TabIndex = 9;
+            this.label95.AutoSize = true;
+            this.label95.Location = new System.Drawing.Point(7, 86);
+            this.label95.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label95.Name = "label95";
+            this.label95.Size = new System.Drawing.Size(117, 17);
+            this.label95.TabIndex = 559;
+            this.label95.Text = "Record Selected:";
             // 
-            // txt_ADAM6250_IP
+            // txt_CMMO_RecSelected
             // 
-            this.txt_ADAM6250_IP.BackColor = System.Drawing.SystemColors.Control;
-            this.txt_ADAM6250_IP.Enabled = false;
-            this.txt_ADAM6250_IP.Location = new System.Drawing.Point(8, 27);
-            this.txt_ADAM6250_IP.Margin = new System.Windows.Forms.Padding(4);
-            this.txt_ADAM6250_IP.Name = "txt_ADAM6250_IP";
-            this.txt_ADAM6250_IP.Size = new System.Drawing.Size(120, 22);
-            this.txt_ADAM6250_IP.TabIndex = 8;
+            this.txt_CMMO_RecSelected.AutoSize = true;
+            this.txt_CMMO_RecSelected.ForeColor = System.Drawing.Color.Blue;
+            this.txt_CMMO_RecSelected.Location = new System.Drawing.Point(127, 86);
+            this.txt_CMMO_RecSelected.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.txt_CMMO_RecSelected.Name = "txt_CMMO_RecSelected";
+            this.txt_CMMO_RecSelected.Size = new System.Drawing.Size(60, 17);
+            this.txt_CMMO_RecSelected.TabIndex = 558;
+            this.txt_CMMO_RecSelected.Text = "000.000";
             // 
-            // btn_RemoteIODisconnect
+            // label103
             // 
-            this.btn_RemoteIODisconnect.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.btn_RemoteIODisconnect.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_RemoteIODisconnect.Location = new System.Drawing.Point(136, 57);
-            this.btn_RemoteIODisconnect.Margin = new System.Windows.Forms.Padding(4);
-            this.btn_RemoteIODisconnect.Name = "btn_RemoteIODisconnect";
-            this.btn_RemoteIODisconnect.Size = new System.Drawing.Size(120, 31);
-            this.btn_RemoteIODisconnect.TabIndex = 4;
-            this.btn_RemoteIODisconnect.Text = "Disconnect";
-            this.btn_RemoteIODisconnect.UseVisualStyleBackColor = true;
-            this.btn_RemoteIODisconnect.Click += new System.EventHandler(this.btn_RemoteIODisconnect_Click);
+            this.label103.AutoSize = true;
+            this.label103.Location = new System.Drawing.Point(7, 65);
+            this.label103.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label103.Name = "label103";
+            this.label103.Size = new System.Drawing.Size(112, 17);
+            this.label103.TabIndex = 557;
+            this.label103.Text = "Current position:";
             // 
-            // btn_RemoteIOConnect
+            // txt_CMMO_Position
             // 
-            this.btn_RemoteIOConnect.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
-            this.btn_RemoteIOConnect.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_RemoteIOConnect.Location = new System.Drawing.Point(8, 57);
-            this.btn_RemoteIOConnect.Margin = new System.Windows.Forms.Padding(4);
-            this.btn_RemoteIOConnect.Name = "btn_RemoteIOConnect";
-            this.btn_RemoteIOConnect.Size = new System.Drawing.Size(120, 31);
-            this.btn_RemoteIOConnect.TabIndex = 3;
-            this.btn_RemoteIOConnect.Text = "Connect";
-            this.btn_RemoteIOConnect.UseVisualStyleBackColor = true;
-            this.btn_RemoteIOConnect.Click += new System.EventHandler(this.btn_RemoteIOConnect_Click);
+            this.txt_CMMO_Position.AutoSize = true;
+            this.txt_CMMO_Position.ForeColor = System.Drawing.Color.Blue;
+            this.txt_CMMO_Position.Location = new System.Drawing.Point(127, 65);
+            this.txt_CMMO_Position.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.txt_CMMO_Position.Name = "txt_CMMO_Position";
+            this.txt_CMMO_Position.Size = new System.Drawing.Size(60, 17);
+            this.txt_CMMO_Position.TabIndex = 556;
+            this.txt_CMMO_Position.Text = "000.000";
             // 
-            // DI11
+            // txt_CMMOConnStatus
             // 
-            this.DI11.AutoSize = true;
-            this.DI11.BackColor = System.Drawing.SystemColors.Control;
-            this.DI11.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.DI11.CustomBackground = true;
-            this.DI11.CustomForeColor = true;
-            this.DI11.Enabled = false;
-            this.DI11.FlatAppearance.BorderColor = System.Drawing.Color.Black;
-            this.DI11.FlatAppearance.CheckedBackColor = System.Drawing.Color.Lime;
-            this.DI11.ForeColor = System.Drawing.Color.Gray;
-            this.DI11.Location = new System.Drawing.Point(10, 258);
-            this.DI11.Name = "DI11";
-            this.DI11.Size = new System.Drawing.Size(54, 17);
-            this.DI11.Style = MetroFramework.MetroColorStyle.Green;
-            this.DI11.TabIndex = 30;
-            this.DI11.Text = "DI 11";
-            this.DI11.UseStyleColors = true;
-            this.DI11.UseVisualStyleBackColor = false;
+            this.txt_CMMOConnStatus.AutoSize = true;
+            this.txt_CMMOConnStatus.ForeColor = System.Drawing.Color.DeepSkyBlue;
+            this.txt_CMMOConnStatus.Location = new System.Drawing.Point(7, 33);
+            this.txt_CMMOConnStatus.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.txt_CMMOConnStatus.Name = "txt_CMMOConnStatus";
+            this.txt_CMMOConnStatus.Size = new System.Drawing.Size(91, 17);
+            this.txt_CMMOConnStatus.TabIndex = 555;
+            this.txt_CMMOConnStatus.Text = "Comm Status";
             // 
-            // DI10
+            // label67
             // 
-            this.DI10.AutoSize = true;
-            this.DI10.BackColor = System.Drawing.SystemColors.Control;
-            this.DI10.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.DI10.CustomBackground = true;
-            this.DI10.CustomForeColor = true;
-            this.DI10.Enabled = false;
-            this.DI10.FlatAppearance.BorderColor = System.Drawing.Color.Black;
-            this.DI10.FlatAppearance.CheckedBackColor = System.Drawing.Color.Lime;
-            this.DI10.ForeColor = System.Drawing.Color.Gray;
-            this.DI10.Location = new System.Drawing.Point(10, 235);
-            this.DI10.Name = "DI10";
-            this.DI10.Size = new System.Drawing.Size(54, 17);
-            this.DI10.Style = MetroFramework.MetroColorStyle.Green;
-            this.DI10.TabIndex = 29;
-            this.DI10.Text = "DI 10";
-            this.DI10.UseStyleColors = true;
-            this.DI10.UseVisualStyleBackColor = false;
+            this.label67.AutoSize = true;
+            this.label67.ForeColor = System.Drawing.SystemColors.ControlDark;
+            this.label67.Location = new System.Drawing.Point(106, 33);
+            this.label67.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label67.Name = "label67";
+            this.label67.Size = new System.Drawing.Size(57, 17);
+            this.label67.TabIndex = 552;
+            this.label67.Text = "Remote";
             // 
-            // DI9
+            // btn_CMMO_Remote
             // 
-            this.DI9.AutoSize = true;
-            this.DI9.BackColor = System.Drawing.SystemColors.Control;
-            this.DI9.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.DI9.CustomBackground = true;
-            this.DI9.CustomForeColor = true;
-            this.DI9.Enabled = false;
-            this.DI9.FlatAppearance.BorderColor = System.Drawing.Color.Black;
-            this.DI9.FlatAppearance.CheckedBackColor = System.Drawing.Color.Lime;
-            this.DI9.ForeColor = System.Drawing.Color.Gray;
-            this.DI9.Location = new System.Drawing.Point(10, 212);
-            this.DI9.Name = "DI9";
-            this.DI9.Size = new System.Drawing.Size(47, 17);
-            this.DI9.Style = MetroFramework.MetroColorStyle.Green;
-            this.DI9.TabIndex = 28;
-            this.DI9.Text = "DI 9";
-            this.DI9.UseStyleColors = true;
-            this.DI9.UseVisualStyleBackColor = false;
+            this.btn_CMMO_Remote.BackColor = System.Drawing.SystemColors.Control;
+            this.btn_CMMO_Remote.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btn_CMMO_Remote.CustomBackground = true;
+            this.btn_CMMO_Remote.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_CMMO_Remote.Location = new System.Drawing.Point(168, 31);
+            this.btn_CMMO_Remote.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btn_CMMO_Remote.Name = "btn_CMMO_Remote";
+            this.btn_CMMO_Remote.Size = new System.Drawing.Size(72, 19);
+            this.btn_CMMO_Remote.TabIndex = 551;
+            this.btn_CMMO_Remote.Text = "Off";
+            this.btn_CMMO_Remote.Theme = MetroFramework.MetroThemeStyle.Dark;
+            this.btn_CMMO_Remote.UseStyleColors = true;
+            this.btn_CMMO_Remote.UseVisualStyleBackColor = false;
             // 
-            // DI8
+            // label8
             // 
-            this.DI8.AutoSize = true;
-            this.DI8.BackColor = System.Drawing.SystemColors.Control;
-            this.DI8.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.DI8.CustomBackground = true;
-            this.DI8.CustomForeColor = true;
-            this.DI8.Enabled = false;
-            this.DI8.FlatAppearance.BorderColor = System.Drawing.Color.Black;
-            this.DI8.FlatAppearance.CheckedBackColor = System.Drawing.Color.Lime;
-            this.DI8.ForeColor = System.Drawing.Color.Gray;
-            this.DI8.Location = new System.Drawing.Point(10, 189);
-            this.DI8.Name = "DI8";
-            this.DI8.Size = new System.Drawing.Size(47, 17);
-            this.DI8.Style = MetroFramework.MetroColorStyle.Green;
-            this.DI8.TabIndex = 27;
-            this.DI8.Text = "DI 8";
-            this.DI8.UseStyleColors = true;
-            this.DI8.UseVisualStyleBackColor = false;
+            this.label8.AutoSize = true;
+            this.label8.Location = new System.Drawing.Point(21, 34);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(24, 17);
+            this.label8.TabIndex = 19;
+            this.label8.Text = "IP:";
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Location = new System.Drawing.Point(21, 73);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(42, 17);
+            this.label9.TabIndex = 20;
+            this.label9.Text = "Port: ";
+            // 
+            // txt_Zanasi4700_Port
+            // 
+            this.txt_Zanasi4700_Port.AutoSize = true;
+            this.txt_Zanasi4700_Port.Location = new System.Drawing.Point(69, 73);
+            this.txt_Zanasi4700_Port.Name = "txt_Zanasi4700_Port";
+            this.txt_Zanasi4700_Port.Size = new System.Drawing.Size(48, 17);
+            this.txt_Zanasi4700_Port.TabIndex = 21;
+            this.txt_Zanasi4700_Port.Text = "00000";
+            // 
+            // txt_Zanasi4700_IP
+            // 
+            this.txt_Zanasi4700_IP.AutoSize = true;
+            this.txt_Zanasi4700_IP.Location = new System.Drawing.Point(69, 34);
+            this.txt_Zanasi4700_IP.Name = "txt_Zanasi4700_IP";
+            this.txt_Zanasi4700_IP.Size = new System.Drawing.Size(116, 17);
+            this.txt_Zanasi4700_IP.TabIndex = 22;
+            this.txt_Zanasi4700_IP.Text = "000.000.000.000";
             // 
             // Form1
             // 
@@ -2174,6 +2194,7 @@
             this.Footer.ResumeLayout(false);
             this.Footer.PerformLayout();
             this.cntr_Comm.ResumeLayout(false);
+            this.cntr_Comm.PerformLayout();
             this.cntr_Cmd.ResumeLayout(false);
             this.cntr_Cmd.PerformLayout();
             this.groupBox1.ResumeLayout(false);
@@ -2186,8 +2207,17 @@
             this.tabControl1.ResumeLayout(false);
             this.tab_Zanasi4700.ResumeLayout(false);
             this.tab_ODBC.ResumeLayout(false);
-            this.groupBox4.ResumeLayout(false);
-            this.groupBox4.PerformLayout();
+            this.tab_RemoteIO.ResumeLayout(false);
+            this.groupBox5.ResumeLayout(false);
+            this.groupBox5.PerformLayout();
+            this.tabControl3.ResumeLayout(false);
+            this.tabPage3.ResumeLayout(false);
+            this.tabPage3.PerformLayout();
+            this.tab4.ResumeLayout(false);
+            this.tab4.PerformLayout();
+            this.pnl_Outputs.ResumeLayout(false);
+            this.pnl_Outputs.PerformLayout();
+            this.tab_Servo.ResumeLayout(false);
             this.pnl_ServoControl.ResumeLayout(false);
             this.pnl_ServoControl.PerformLayout();
             this.tabControl2.ResumeLayout(false);
@@ -2196,17 +2226,8 @@
             this.tabPage2.ResumeLayout(false);
             this.pnl_CMMO_Control.ResumeLayout(false);
             this.pnl_CMMO_Control.PerformLayout();
-            this.tab_RemoteIO.ResumeLayout(false);
-            this.tab_Servo.ResumeLayout(false);
-            this.tabControl3.ResumeLayout(false);
-            this.tabPage3.ResumeLayout(false);
-            this.tabPage3.PerformLayout();
-            this.tab4.ResumeLayout(false);
-            this.tab4.PerformLayout();
-            this.pnl_Outputs.ResumeLayout(false);
-            this.pnl_Outputs.PerformLayout();
-            this.groupBox5.ResumeLayout(false);
-            this.groupBox5.PerformLayout();
+            this.groupBox4.ResumeLayout(false);
+            this.groupBox4.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -2221,9 +2242,7 @@
         private System.Windows.Forms.ToolStripStatusLabel lb_Hora;
         private System.Windows.Forms.ToolStripStatusLabel lb_Fecha;
         private System.Windows.Forms.Timer LocalClock;
-        private System.Windows.Forms.Button btn_Scan;
         private System.Windows.Forms.GroupBox cntr_Comm;
-        private System.Windows.Forms.ComboBox cbx_Ports;
         private System.Windows.Forms.Button btn_Disconnect;
         private System.Windows.Forms.Button btn_Connect;
         private System.Windows.Forms.GroupBox cntr_Cmd;
@@ -2353,6 +2372,10 @@
         private MetroFramework.Controls.MetroCheckBox DI8;
         private System.Windows.Forms.Button ServoDisconnect;
         private System.Windows.Forms.Button btn_ServoConnect;
+        private System.Windows.Forms.Label txt_Zanasi4700_IP;
+        private System.Windows.Forms.Label txt_Zanasi4700_Port;
+        private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.Label label8;
     }
 }
 

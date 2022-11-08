@@ -63,6 +63,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ADAM6250.cs" />
+    <Compile Include="Client_TcpIp.cs" />
     <Compile Include="CMMO_ST_LKP.cs" />
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
