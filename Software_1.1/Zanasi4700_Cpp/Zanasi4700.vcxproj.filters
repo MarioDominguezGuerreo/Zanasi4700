@@ -2,13 +2,13 @@
 <Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup>
     <Filter Include="Sources">
-      <UniqueIdentifier>{5e035750-a9b3-4f4a-bbad-03f8d9234998}</UniqueIdentifier>
+      <UniqueIdentifier>{223de42b-eef6-40ef-b81e-0e87e16e894b}</UniqueIdentifier>
     </Filter>
     <Filter Include="Headers">
-      <UniqueIdentifier>{6b4f0f5a-f8da-4da9-8fa0-32ca40ebd07b}</UniqueIdentifier>
+      <UniqueIdentifier>{4858d7a6-ee6f-4950-9dee-b42ceccc39fe}</UniqueIdentifier>
     </Filter>
     <Filter Include="Resources">
-      <UniqueIdentifier>{618ac633-3d97-4a79-81be-15cce1a4ced9}</UniqueIdentifier>
+      <UniqueIdentifier>{0b4d3b56-76b5-4b21-bde5-653c5a244683}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
@@ -21,9 +21,6 @@
     <ClCompile Include="SerialComm.cpp">
       <Filter>Sources</Filter>
     </ClCompile>
-    <ClCompile Include="TCPIPComm.cpp">
-      <Filter>Sources</Filter>
-    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="machcomm.h">
@@ -33,9 +30,6 @@
       <Filter>Headers</Filter>
     </ClInclude>
     <ClInclude Include="SerialComm.h">
-      <Filter>Headers</Filter>
-    </ClInclude>
-    <ClInclude Include="TCPIPComm.h">
       <Filter>Headers</Filter>
     </ClInclude>
   </ItemGroup>

@@ -41,7 +41,7 @@ namespace Zanasi4700
         #endregion
 
         #region TCP/IP Client Settings
-        private static string iP = "127.0.0.1";
+        private static string iP = "127.0.0.1"/*"192.168.1.20"*/;
         public string IP
         {
             get
@@ -54,7 +54,7 @@ namespace Zanasi4700
                 iP = value;
             }
         }
-        private static int port = 9999;
+        private static int port = 43110;
         public int Port
         {
             get
@@ -129,7 +129,7 @@ namespace Zanasi4700
                 byte[] Msg = new byte[MAX_COMMAND_SIZE];
                 //Get the message length         
                 int Size = PC_Client.Receive(Msg);
-                
+                Console.WriteLine();
             }
         }
         //Send data from the Zanasi 4700 (Server)

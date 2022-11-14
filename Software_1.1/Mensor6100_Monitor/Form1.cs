@@ -40,18 +40,21 @@ namespace Zanasi4700
         public const Byte MsgSize       = 0x0C; //12 characters
 
         public const Byte Space         = 0x20; //Empty 
+        public const Byte Termination   = 0x0A; //Termination 
+
         enum ZanasiCMD
         {
             Head,
             SetQuery,
             LineIndex,
             MsgIndex,
-            MsgSize
+            MsgSize,
+            Termination = 17
         }
 
         // Line 1 Hex:       [0x23] [0xA3]  [0x00]  [0x00]  [0x12]  Message converted to Bytes
         // Line positiona:   [0]    [1]     [2]     [3]     [4]     [5-16]
-        static Byte[] msgWrapped = new Byte[17];
+        static Byte[] msgWrapped = new Byte[18];
         public byte[] MsgWrapped
         {
             get
@@ -437,21 +440,39 @@ namespace Zanasi4700
         #region External Data: Control
         private void btn_ExtData_Index0_Click(object sender, EventArgs e)
         {
+            /* RS232 Disabled
             if (serialPort1.IsOpen)
+            {
+                ExtData_Index0();
+            }
+            */
+            if (CZanasi4700.Parameters[(int)Scanner_Comm.CommStatus])
             {
                 ExtData_Index0();
             }
         }
         private void btn_ExtData_Index1_Click_1(object sender, EventArgs e)
         {
+            /* RS232 Disabled
             if (serialPort1.IsOpen)
+            {
+                ExtData_Index1();
+            }
+            */
+            if (CZanasi4700.Parameters[(int)Scanner_Comm.CommStatus])
             {
                 ExtData_Index1();
             }
         }
         private void btn_ExtData_Index2_Click(object sender, EventArgs e)
         {
+            /* RS232 Disabled
             if (serialPort1.IsOpen)
+            {
+                ExtData_Index2();
+            }
+            */
+            if (CZanasi4700.Parameters[(int)Scanner_Comm.CommStatus])
             {
                 ExtData_Index2();
             }
@@ -471,18 +492,19 @@ namespace Zanasi4700
             char[] Line1_Command;
             string Line1_cmd = "";
             //Command position:  [0]   [1]   [2]   [3]   [4]   [5]   [6]   [7]   [8]   [9]   [10]
-            Byte[] _ZanasiCMD = { 0x23, 0xA3, 0x00, 0x00, 0x0C, 0x54, 0x45, 0x53, 0x54, 0x20, 0x20, 0x20, 0x20, 0x20, 0x20, 0x20, 0x38 };
-
-            //Description of the Command:
-            //[0] Header                        Const = 0x23
-            //[1] Command to Set Information    Const = 0xA3
-            //[2] External Command Index        Const = 0x00, 0x01, 0x02
-            //[3] Message Index                 Const = 0x00 
-            //[4] Message Lenght
-            //Message
-            //[5]-[Size_Message] 
-            //Message: ASCII
-            Line1_Command = System.Text.Encoding.Default.GetChars(_ZanasiCMD);
+            //Byte[] _ZanasiCMD = { 0x23, 0xA3, 0x00, 0x00, 0x0C, 0x54, 0x45, 0x53, 0x54, 0x20, 0x20, 0x20, 0x20, 0x20, 0x20, 0x20, 0x38 };
+            Byte[] _ZanasiCMD = { 0x65, 0x78, 0x74, 0x65, 0x72, 0x6E, 0x61, 0x6C, 0x5F, 0x66, 0x69, 0x65, 0x6C, 0x64, 0x20, 0x73, 0x74, 0x72,
+                                  0x69, 0x6E, 0x67, 0x20, 0x30, 0x20, 0x22, 0x74, 0x65, 0x73, 0x74, 0x22, 0x0A};
+        //Description of the Command:
+        //[0] Header                        Const = 0x23
+        //[1] Command to Set Information    Const = 0xA3
+        //[2] External Command Index        Const = 0x00, 0x01, 0x02
+        //[3] Message Index                 Const = 0x00 
+        //[4] Message Lenght
+        //Message
+        //[5]-[Size_Message] 
+        //Message: ASCII
+        Line1_Command = System.Text.Encoding.Default.GetChars(_ZanasiCMD);
 
             #region Info: Command Structure
             for (int i = 0; i < Line1_Command.Length; i++) { Line1_cmd += Line1_Command[i].ToString(); }
@@ -490,8 +512,11 @@ namespace Zanasi4700
             txt_ReadData.AppendText("\n");
             #endregion
 
+            /* RS232 Disabled
             //Send to Serial Port
             serialPort1.Write(Line1_Command, 0, Line1_Command.Length);
+            */
+            CZanasi4700.SendCommand(Line1_Command.ToString());
 
             #region Info: Command Structure
             //serialPort1.Write(Line1_cmd); 
@@ -533,7 +558,9 @@ namespace Zanasi4700
             char[] Line2_Command;
             string Line2_cmd = "";
             //Command position:  [0]   [1]   [2]   [3]   [4]   [5]   [6]   [7]   [8]   [9]   [10]
-            Byte[] _ZanasiCMD = { 0x23, 0xA3, 0x01, 0x00, 0x06, 0x54, 0x45, 0x53, 0x54, 0x20, 0x32 };
+            // Byte[] _ZanasiCMD = { 0x23, 0xA3, 0x01, 0x00, 0x06, 0x54, 0x45, 0x53, 0x54, 0x20, 0x32 };
+            Byte[] _ZanasiCMD = { 0x65, 0x78, 0x74, 0x65, 0x72, 0x6E, 0x61, 0x6C, 0x5F, 0x66, 0x69, 0x65, 0x6C, 0x64, 0x20, 0x73, 0x74, 0x72,
+                                  0x69, 0x6E, 0x67, 0x20, 0x30, 0x20, 0x22, 0x74, 0x65, 0x73, 0x74, 0x22, 0x0A};
             //Description of the Command:
             //[0] Header
             //[1] Command to Set Information
@@ -544,8 +571,13 @@ namespace Zanasi4700
             //[5]-[Size_Message] 
             //Message: ASCII
             Line2_Command = System.Text.Encoding.Default.GetChars(_ZanasiCMD);
-            serialPort1.Write(Line2_Command, 0, Line2_Command.Length);
-            //Send to Serial Port
+
+            /* RS232 Disabled
+           //Send to Serial Port
+           serialPort1.Write(Line2_Command, 0, Line2_Command.Length);
+           */
+            CZanasi4700.SendCommand(Line2_Command.ToString());
+
             txt_ReadData.SelectionColor = Mensaje.msgProcess();
             //Message ASCII
             Line2_cmd = "";
@@ -589,7 +621,9 @@ namespace Zanasi4700
             char[] Line3_Command;
             string Line3_cmd = "";
             //Command position:  [0]   [1]   [2]   [3]   [4]   [5]   [6]   [7]   [8]   [9]   [10]
-            Byte[] _ZanasiCMD = { 0x23, 0xA3, 0x02, 0x00, 0x06, 0x54, 0x45, 0x53, 0x54, 0x20, 0x33 };
+            //Byte[] _ZanasiCMD = { 0x23, 0xA3, 0x02, 0x00, 0x06, 0x54, 0x45, 0x53, 0x54, 0x20, 0x33 };
+            Byte[] _ZanasiCMD = { 0x65, 0x78, 0x74, 0x65, 0x72, 0x6E, 0x61, 0x6C, 0x5F, 0x66, 0x69, 0x65, 0x6C, 0x64, 0x20, 0x73, 0x74, 0x72,
+                                  0x69, 0x6E, 0x67, 0x20, 0x30, 0x20, 0x22, 0x74, 0x65, 0x73, 0x74, 0x22, 0x0A};
             //Description of the Command:
             //[0] Header
             //[1] Command to Set Information
@@ -600,8 +634,13 @@ namespace Zanasi4700
             //[5]-[Size_Message] 
             //Message: ASCII
             Line3_Command = System.Text.Encoding.Default.GetChars(_ZanasiCMD);
+
+            /* RS232 Disabled
             //Send to Serial Port
             serialPort1.Write(Line3_Command, 0, Line3_Command.Length);
+            */
+            CZanasi4700.SendCommand(Line3_Command.ToString());
+
             txt_ReadData.SelectionColor = Mensaje.msgProcess();
             //Message ASCII
             Line3_cmd = "";
@@ -786,6 +825,7 @@ namespace Zanasi4700
             msgWrapped[(int)ZanasiCMD.LineIndex]    = mLine;
             msgWrapped[(int)ZanasiCMD.MsgIndex]     = MsgIndex;
             msgWrapped[(int)ZanasiCMD.MsgSize]      = MsgSize;
+            msgWrapped[(int)ZanasiCMD.Termination]  = Termination;
             //Message Bytes (5-16)
             for (int i = 0; i < MsgMaxSize; i++)
                 msgWrapped[i+5] = byteMessage[i];
